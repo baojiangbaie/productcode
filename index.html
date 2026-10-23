@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+<script>
+// DOM保护锁，防止页面js覆盖修改内容
+Object.defineProperty(document.body, 'innerHTML', {writable:false});
+document.addEventListener('DOMContentLoaded',()=>{
+  const observer = new MutationObserver(()=>{});
+  observer.observe(document.body,{childList:true,subtree:true,attributes:false});
+});
+</script>
 <html lang="zh-CN"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -875,14 +883,5 @@ renderEdit();
 </script>
 
 
-
-<script>
-// DOM保护锁，防止页面js覆盖修改内容
-Object.defineProperty(document.body, 'innerHTML', {writable:false});
-document.addEventListener('DOMContentLoaded',()=>{
-  const observer = new MutationObserver(()=>{});
-  observer.observe(document.body,{childList:true,subtree:true,attributes:false});
-});
-</script>
 
 </body></html>

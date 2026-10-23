@@ -349,523 +349,3493 @@ table.ef input:focus{border-color:var(--accent);outline:none}
 <script>
 "use strict";
 /* ===== 初始数据（由解析脚本注入，勿手改） ===== */
-const RAW_DATA = {"version":1,"finished":[{"name":"氛围灯模组光色检测校准系统","series":"A1","type":"finished","categories":[{"series":"A1","category":"GSA1000-A","code3":"A1A","remark":"收光器","rule":"A1A+2位流水码+7位配置码","picks":["外径100","G-1-01","有","403","海康","LIN"]},{"series":"A1","category":"GSA1000-B","code3":"A1B","remark":"积分球","rule":"A1B+2位流水码+7位配置码","picks":["外径150","G-2-01","无","503","霍尼韦尔","SWD"]},{"series":"A1","category":"GSA1000-C","code3":"A1C","remark":"伺服轴","rule":"A1C+2位流水码+7位配置码","picks":["外径300","G-2-02","","505","",""]}],"configs":[{"name":"积分球外径","options":[["外径100","1"],["外径150","2"],["外径300","3"]]},{"name":"光谱仪型号","options":[["G-1-01","1"],["G-2-01","2"],["G-2-02","3"]]},{"name":"伺服轴","options":[["有","X"],["无","0"]]},{"name":"LIN","options":[["403","1"],["503","2"],["505","3"]]},{"name":"扫码枪","options":[["海康","K"],["霍尼韦尔","R"]]},{"name":"烧录协议","options":[["LIN","L"],["SWD","S"]]}],"first_row":2},{"name":"LED模组光色检测校准系统","series":"A2","type":"finished","categories":[{"series":"A2","category":"GSA2000-A","code3":"A2A","remark":"积分球","rule":"A2A+2位流水码+7位配置码","picks":["外径500","G-3-01","403"]},{"series":"A2","category":"GSA2000-B","code3":"A2B","remark":"光谱仪","rule":"A2B+2位流水码+7位配置码","picks":["外径1000","G-4-01","503"]}],"configs":[{"name":"积分球外径","options":[["外径500","4"],["外径1000","5"]]},{"name":"光谱仪型号","options":[["G-3-01","4"],["G-4-01","5"]]},{"name":"LIN","options":[["403","1"],["503","2"]]}],"first_row":5},{"name":"LED模组光色检测校准系统","series":"A3","type":"finished","categories":[{"series":"A3","category":"GSA3000","code3":"","remark":"","rule":"+2位流水码+7位配置码","picks":["外径2000","G-06","504"]},{"series":"A3","category":"","code3":"","remark":"","rule":"+2位流水码+7位配置码","picks":["","SPEC8000",""]}],"configs":[{"name":"积分球外径","options":[["外径2000","6"]]},{"name":"光谱仪型号","options":[["G-06","6"],["SPEC8000","7"]]},{"name":"LIN","options":[["504","3"]]}],"first_row":7},{"name":"智能相机","series":"A5","type":"finished","categories":[{"series":"A5","category":"GSA5000","code3":"A5L","remark":"简化","rule":"A5L+2位流水码+7位配置码","picks":["","24V",""]},{"series":"A5","category":"","code3":"A5S","remark":"标准","rule":"A5S+2位流水码+7位配置码","picks":["","36v",""]},{"series":"A5","category":"","code3":"A5C","remark":"定制","rule":"A5C+2位流水码+7位配置码","picks":["","",""]}],"configs":[{"name":"相机","options":[]},{"name":"电压","options":[["24V","1"],["36v","2"]]},{"name":"性能","options":[]}],"first_row":9},{"name":"光色电热测试系统","series":"A6","type":"finished","categories":[{"series":"A6","category":"GSA6000","code3":"A60","remark":"","rule":"A60+2位流水码+7位配置码","picks":["","","",""]}],"configs":[{"name":"积分球外径","options":[]},{"name":"光谱仪型号","options":[]},{"name":"LIN","options":[]},{"name":"程控电源","options":[]}],"first_row":12},{"name":"氛围灯模组多通道光色检测校准系统","series":"B1","type":"finished","categories":[{"series":"B1","category":"GSB1000","code3":"B11","remark":"1通道","rule":"B11+2位流水码+7位配置码","picks":["1*1*1.8","","","FTL8005P","8155","44042D"]},{"series":"B1","category":"","code3":"B12","remark":"2通道","rule":"B12+2位流水码+7位配置码","picks":["1.2*1.2*2","","","FTL3010","8165",""]},{"series":"B1","category":"","code3":"B14","remark":"4通道","rule":"B14+2位流水码+7位配置码","picks":["","","","FTL3030","8246B",""]},{"series":"B1","category":"","code3":"B16","remark":"6通道","rule":"B16+2位流水码+7位配置码","picks":["","","","FTL3003-X","",""]},{"series":"B1","category":"","code3":"B18","remark":"8通道","rule":"B18+2位流水码+7位配置码","picks":["","","","","",""]}],"configs":[{"name":"尺寸","options":[["1*1*1.8","a"],["1.2*1.2*2","b"]]},{"name":"收光器通道","options":[]},{"name":"光谱仪型号","options":[]},{"name":"程控电源","options":[["FTL8005P","1"],["FTL3010","2"],["FTL3030","3"],["FTL3003-X","4"]]},{"name":"万用表","options":[["8155","1"],["8165","2"],["8246B","3"]]},{"name":"采集卡","options":[["44042D","1"]]}],"first_row":13},{"name":"氛围灯模组多通道光色检测校准系统","series":"B2","type":"finished","categories":[{"series":"B2","category":"GSB2000","code3":"B21","remark":"1通道","rule":"B21+2位流水码+7位配置码","picks":["1*1*1.8","1通道","","",""]},{"series":"B2","category":"","code3":"B22","remark":"2通道","rule":"B22+2位流水码+7位配置码","picks":["1.2*1.2*2","2通道","","",""]},{"series":"B2","category":"","code3":"B24","remark":"4通道","rule":"B24+2位流水码+7位配置码","picks":["","4通道","","",""]},{"series":"B2","category":"","code3":"B26","remark":"6通道","rule":"B26+2位流水码+7位配置码","picks":["","6通道","","",""]},{"series":"B2","category":"","code3":"B28","remark":"8通道","rule":"B28+2位流水码+7位配置码","picks":["","8通道","","",""]}],"configs":[{"name":"尺寸","options":[["1*1*1.8","a"],["1.2*1.2*2","b"]]},{"name":"收光器通道","options":[["1通道","1"],["2通道","2"],["4通道","4"],["6通道","6"],["8通道","8"]]},{"name":"光谱仪型号","options":[]},{"name":"程控电源","options":[]},{"name":"万用表","options":[]}],"first_row":18},{"name":"汽车发光件实验室精准检测平台","series":"GD","type":"finished","categories":[{"series":"GD","category":"GSD2000","code3":"D20","remark":"","rule":"D20+2位流水码+7位配置码","picks":[""]}],"configs":[{"name":"相机","options":[]}],"first_row":23},{"name":"外饰灯总成检测系统","series":"GE","type":"finished","categories":[{"series":"GE","category":"GSE1000","code3":"E10","remark":"","rule":"E10+2位流水码+7位配置码","picks":["","","",""]}],"configs":[{"name":"伺服轴","options":[]},{"name":"程控电源","options":[]},{"name":"电流采集卡","options":[]},{"name":"LIN","options":[]}],"first_row":24},{"name":"氛围灯总成检测系统","series":"F1","type":"finished","categories":[{"series":"F1","category":"GSF1000-A","code3":"F1A","remark":"直接取放","rule":"F1A+2位流水码+7位配置码","picks":["1200*800*2300","G3-26C","","","",""]},{"series":"F1","category":"GSF1000-B","code3":"F1B","remark":"模组进出","rule":"F1B+2位流水码+7位配置码","picks":["1200*1400*2300","G6-26C","","","",""]},{"series":"F1","category":"GSF1000-C","code3":"F1C","remark":"转盘","rule":"F1C+2位流水码+7位配置码","picks":["1200*1200*2000","G6-02B","","","",""]},{"series":"F1","category":"GSF1000-D","code3":"F1D","remark":"上下双层","rule":"F1D+2位流水码+7位配置码","picks":["1200*1200*2300","","","","",""]},{"series":"F1","category":"GSF1000-E","code3":"F1E","remark":"天窗氛围灯","rule":"F1E+2位流水码+7位配置码","picks":["","","","","",""]},{"series":"F1","category":"GSF1000-F","code3":"F1F","remark":"非标","rule":"F1F+2位流水码+7位配置码","picks":["","","","","",""]}],"configs":[{"name":"尺寸","options":[["1200*800*2300","a"],["1600*800*2300/2400","b"],["2000*800*2300","c"],["定制尺寸","d"],["1200*1400*2300","a"],["1600*1400*2300/2400","b"],["2000*1400*2300","c"],["1200*1200*2000","a"],["1600*1300*2300","b"],["1200*1200*2300","a"],["1600*1200*2300/2400","b"],["2000*1200*2300","c"]]},{"name":"相机","options":[["G3-26C","1"],["G3-61C","2"],["G6-26B","3"],["G6-26C","4"],["G6-62B","5"],["G6-62C","6"],["G6-02B","7"]]},{"name":"伺服轴","options":[]},{"name":"程控电源","options":[]},{"name":"电流采集卡","options":[]},{"name":"LIN","options":[]}],"first_row":25},{"name":"氛围灯总成检测校准系统","series":"GG","type":"finished","categories":[{"series":"GG","category":"GSG1000-A","code3":"G1A","remark":"","rule":"G1A+2位流水码+7位配置码","picks":["同GSF100","","","","",""]},{"series":"GG","category":"GSG1000-B","code3":"G1B","remark":"","rule":"G1B+2位流水码+7位配置码","picks":["同GSF100","","","","",""]},{"series":"GG","category":"GSG1000-C","code3":"G1C","remark":"","rule":"G1C+2位流水码+7位配置码","picks":["同GSF100","","","","",""]},{"series":"GG","category":"GSG1000-D","code3":"G1D","remark":"","rule":"G1D+2位流水码+7位配置码","picks":["同GSF100","","","","",""]}],"configs":[{"name":"尺寸","options":[["同GSF100",""]]},{"name":"相机","options":[]},{"name":"伺服轴","options":[]},{"name":"程控电源","options":[]},{"name":"电流采集卡","options":[]},{"name":"LIN","options":[]}],"first_row":42},{"name":"氛围灯模组多通道烧录系统","series":"GH","type":"finished","categories":[{"series":"GH","category":"GSH1000-4","code3":"H11","remark":"4通道","rule":"H11+2位流水码+7位配置码","picks":["1*1*1.8","4","图莫斯",""]},{"series":"GH","category":"GSH1000-8","code3":"H12","remark":"8通道","rule":"H12+2位流水码+7位配置码","picks":["1.2*1.2*2","8","戎象",""]},{"series":"GH","category":"GSH1000-16","code3":"H13","remark":"16通道","rule":"H13+2位流水码+7位配置码","picks":["","16","图莫斯+戎象",""]},{"series":"GH","category":"GSH1000-24","code3":"H14","remark":"24通道","rule":"H14+2位流水码+7位配置码","picks":["","24","力捷丰",""]},{"series":"GH","category":"GSH2000-4","code3":"H21","remark":"4通道","rule":"H21+2位流水码+7位配置码","picks":["","","",""]},{"series":"GH","category":"GSH2000-8","code3":"H22","remark":"8通道","rule":"H22+2位流水码+7位配置码","picks":["","","",""]},{"series":"GH","category":"GSH2000-16","code3":"H23","remark":"16通道","rule":"H23+2位流水码+7位配置码","picks":["","","",""]},{"series":"GH","category":"GSH2000-24","code3":"H24","remark":"24通道","rule":"H24+2位流水码+7位配置码","picks":["","","",""]}],"configs":[{"name":"尺寸","options":[["1*1*1.8","a"],["1.2*1.2*2","b"]]},{"name":"烧录通道","options":[["4","1"],["8","2"],["16","3"],["24","4"]]},{"name":"烧录器品牌","options":[["图莫斯","1"],["戎象","2"],["图莫斯+戎象","3"],["力捷丰","4"]]},{"name":"烧录协议","options":[]}],"first_row":46},{"name":"氛围灯PCBA产品烧录检测校准系统","series":"HB","type":"finished","categories":[{"series":"HB","category":"GSHB1000","code3":"HB1","remark":"4通道","rule":"HB1+2位流水码+7位配置码","picks":["1*1*1.8","","","","",""]},{"series":"HB","category":"","code3":"HB2","remark":"8通道","rule":"HB2+2位流水码+7位配置码","picks":["1.2*1.2*2","","","","",""]},{"series":"HB","category":"","code3":"HB3","remark":"16通道","rule":"HB3+2位流水码+7位配置码","picks":["","","","","",""]},{"series":"HB","category":"","code3":"HB4","remark":"24通道","rule":"HB4+2位流水码+7位配置码","picks":["","","","","",""]}],"configs":[{"name":"尺寸","options":[["1*1*1.8","a"],["1.2*1.2*2","b"]]},{"name":"烧录通道","options":[]},{"name":"烧录器品牌","options":[]},{"name":"收光器通道","options":[]},{"name":"光谱仪","options":[]},{"name":"万用表","options":[]}],"first_row":54},{"name":"微透镜模组光学测量分析系统","series":"GM","type":"finished","categories":[{"series":"GM","category":"GSM1000","code3":"M10","remark":"","rule":"M10+2位流水码+7位配置码","picks":[""]}],"configs":[{"name":"相机","options":[]}],"first_row":58},{"name":"光学质量巡检仪","series":"GL","type":"finished","categories":[{"series":"GL","category":"GSL1000","code3":"L10","remark":"","rule":"L10+2位流水码+7位配置码","picks":["透镜+色彩传感器"]}],"configs":[{"name":"采集头","options":[["透镜+色彩传感器","1"],["","2"]]}],"first_row":59},{"name":"智能光源色卡","series":"GS","type":"finished","categories":[{"series":"GS","category":"GSS1000-H","code3":"S1H","remark":"高亮","rule":"S1H+2位流水码+7位配置码","picks":[]},{"series":"GS","category":"GSS1000-L","code3":"S1L","remark":"低亮","rule":"S1L+2位流水码+7位配置码","picks":[]}],"configs":[],"first_row":61},{"name":"工装","series":"GE","type":"finished","categories":[{"series":"GE","category":"EOL","code3":"EOL","remark":"总成检测工装","rule":"EOL+2位流水码+7位配置码","picks":["一","无","客户自配","手动","无"]}],"configs":[{"name":"一模几穴","options":[["一","1"],["二","2"],["三","3"],["四","4"]]},{"name":"打点","options":[["无","0"],["有","1"],["OK打点","2"],["NG打点","3"]]},{"name":"上电","options":[["客户自配","0"],["手动","M"],["自动","A"]]},{"name":"压紧","options":[["手动","M"],["自动","A"]]},{"name":"自动扫码","options":[["无",""],["有",""]]}],"first_row":63},{"name":"工装","series":"GP","type":"finished","categories":[{"series":"GP","category":"PCBA","code3":"PCB","remark":"校准烧录工装","rule":"PCB+2位流水码+7位配置码","picks":["校准","050"]}],"configs":[{"name":"校准烧录","options":[["校准","1"],["烧录","2"],["校准+烧录","3"]]},{"name":"探针型号","options":[["050","1"],["075","2"],["100","3"]]}],"first_row":67},{"name":"工装","series":"A1","type":"finished","categories":[{"series":"A1","category":"A-1","code3":"A10","remark":"单板工装","rule":"A10+2位流水码+7位配置码","picks":["无"]}],"configs":[{"name":"探针","options":[["无","0"],["050","1"],["075","2"],["100","3"]]}],"first_row":70},{"name":"工装","series":"A3","type":"finished","categories":[{"series":"A3","category":"A-3","code3":"A30","remark":"积分球工装","rule":"A30+2位流水码+7位配置码","picks":[]}],"configs":[],"first_row":74}],"semi":[{"name":"相机组件","series":"","type":"semi","categories":[{"series":"","category":"CM","code3":"CM","remark":"","rule":"CM+2位流水码+6位配置码","digits":"10","picks":["G3-26C","24mm","ND8","X"]}],"configs":[{"name":"相机","options":[["G3-26C","1"],["G3-61C","2"],["G6-26B","3"],["G6-26C","4"],["G6-62B","5"],["G6-62C","6"]]},{"name":"镜头","options":[["24mm","1"],["28mm","2"],["35mm","3"]]},{"name":"ND镜","options":[["ND8","1"],["ND64","2"],["ND1000","3"]]},{"name":"伺服轴","options":[["X","1"],["X+Y","2"],["X+Y+Z","3"],["Z","4"],["U","5"],["X+U","6"]]}],"first_row":1},{"name":"收光组件","series":"","type":"semi","categories":[{"series":"","category":"PE","code3":"PE","remark":"","rule":"PE+2位流水码+6位配置码","digits":"10","picks":["1通道","G-1-01/A/A/01","","V1.0","1246通道5口"]}],"configs":[{"name":"收光器通道","options":[["1通道","1"],["2通道","2"],["4通道","4"],["6通道","6"],["8通道","8"]]},{"name":"光谱仪","options":[["G-1-01/A/A/01","1"],["G-2-01/A/A/01","2"],["G-2-02/A/A/01","3"],["G-3-01/A/A/01","4"],["G-4-01/A/A/01","5"],["G-06","6"]]},{"name":"排列方式","options":[["","0"],["水平","1"],["垂直","2"],["2X2","3"],["2X4","4"]]},{"name":"收光器版本","options":[["V1.0","1"],["V1.0slim","2"],["V2.0","3"],["V3.0","4"],["双灯珠","5"]]},{"name":"交换机（随收光器通道变更）","options":[["1246通道5口",""],["8通道九口",""]]}],"first_row":7},{"name":"顶层组件","series":"","type":"semi","categories":[{"series":"","category":"TS","code3":"TS","remark":"","rule":"TS+8位流水码","digits":"10","picks":[""]}],"configs":[{"name":"尺寸","options":[]}],"first_row":13},{"name":"上壳体组件","series":"","type":"semi","categories":[{"series":"","category":"US","code3":"US","remark":"","rule":"US+8位流水码","digits":"10","picks":[""]}],"configs":[{"name":"尺寸","options":[]}],"first_row":14},{"name":"升降门组件","series":"","type":"semi","categories":[{"series":"","category":"RD","code3":"RD","remark":"","rule":"RD+8位流水码","digits":"10","picks":[""]}],"configs":[{"name":"尺寸","options":[]}],"first_row":15},{"name":"电脑组件","series":"","type":"semi","categories":[{"series":"","category":"CP","code3":"CP","remark":"","rule":"CP+2位流水码+6位配置码","digits":"10","picks":["",""]}],"configs":[{"name":"工控机","options":[]},{"name":"显示器","options":[]}],"first_row":16},{"name":"台面板组件","series":"","type":"semi","categories":[{"series":"","category":"PN","code3":"PN","remark":"","rule":"PN+2位流水码+6位配置码","digits":"10","picks":["","有","有"]}],"configs":[{"name":"尺寸","options":[]},{"name":"电插头","options":[["有","1"],["重载","2"],["圆插头","3"]]},{"name":"气插头","options":[["有","1"],["重载","2"],["圆插头","3"]]}],"first_row":17},{"name":"工装升降组件","series":"","type":"semi","categories":[{"series":"","category":"FL","code3":"FL","remark":"","rule":"FL+8位流水码","digits":"10","picks":[""]}],"configs":[{"name":"尺寸","options":[]}],"first_row":20},{"name":"输送组件","series":"","type":"semi","categories":[{"series":"","category":"CV","code3":"CV","remark":"","rule":"CV+8位流水码","digits":"10","picks":["",""]}],"configs":[{"name":"尺寸","options":[]},{"name":"3","options":[]}],"first_row":21},{"name":"下壳体组件","series":"","type":"semi","categories":[{"series":"","category":"LS","code3":"LS","remark":"","rule":"LS+8位流水码","digits":"10","picks":[""]}],"configs":[{"name":"尺寸","options":[]}],"first_row":22},{"name":"设备电气组件","series":"","type":"semi","categories":[{"series":"","category":"EC","code3":"EC","remark":"","rule":"EC+2位流水码+6位配置码","digits":"10","picks":["A"]}],"configs":[{"name":"功能","options":[["A","1"],["B","2"],["C","3"],["D","4"],["烧录","5"],["校准","6"]]}],"first_row":23},{"name":"仪器仪表组件","series":"","type":"semi","categories":[{"series":"","category":"IN","code3":"IN","remark":"","rule":"IN+2位流水码+6位配置码","digits":"10","picks":["无","无","",""]}],"configs":[{"name":"打印机","options":[["无",""],["有",""]]},{"name":"扫码枪","options":[["无",""],["有",""]]},{"name":"LIN","options":[]},{"name":"电流电压采集卡","options":[]}],"first_row":29},{"name":"设备电气配件","series":"","type":"semi","categories":[{"series":"","category":"EA","code3":"EA","remark":"","rule":"EA+2位流水码+6位配置码","digits":"10","picks":[""]}],"configs":[{"name":"功能","options":[]}],"first_row":31},{"name":"软件组件","series":"","type":"semi","categories":[{"series":"","category":"SW","code3":"SW","remark":"","rule":"SW+2位流水码+6位配置码","digits":"10","picks":["总成"]}],"configs":[{"name":"版本号","options":[["总成","1"],["PCBA","2"]]}],"first_row":32},{"name":"包装组件","series":"","type":"semi","categories":[{"series":"","category":"PK","code3":"PK","remark":"","rule":"PK+2位流水码+6位配置码","digits":"10","picks":["木托","有"]}],"configs":[{"name":"","options":[["木托","1"],["木架","2"],["木箱","3"],["海外木箱","4"]]},{"name":"CE认证","options":[["有","C"]]}],"first_row":34},{"name":"设备大壳体","series":"","type":"semi","categories":[{"series":"","category":"SH","code3":"SH","remark":"","rule":"SH+5位流水码+3位配置码","digits":"10","picks":["",""]}],"configs":[{"name":"设备分类","options":[]},{"name":"尺寸","options":[]}],"first_row":38},{"name":"工装底板组件","series":"","type":"semi","categories":[{"series":"","category":"FP","code3":"FP","remark":"","rule":"FP+8位流水码","digits":"10","picks":[""]}],"configs":[{"name":"尺寸","options":[]}],"first_row":39},{"name":"设备内部组件","series":"","type":"semi","categories":[{"series":"","category":"IA","code3":"IA","remark":"","rule":"IA+5位流水码+3位配置码","digits":"10","picks":["分类代码"]}],"configs":[{"name":"设备分类","options":[["分类代码",""]]}],"first_row":40}]};
-/* ===== 应用逻辑 ===== */
-/* ---------- 工具函数 ---------- */
-function $id(id){return document.getElementById(id)}
-function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;')}
-function toast(msg,type){
-  const t=$id('toast'); t.textContent=msg; t.className='show'+(type?' '+type:'');
-  clearTimeout(t._h); t._h=setTimeout(function(){t.className=''},2200);
-}
-function deepCopy(o){return JSON.parse(JSON.stringify(o))}
-
-/* ---------- 数据加载与规范化 ---------- */
-const LS_KEY='optcocode_rules_v1';
-let data=null;
-let storageOk=true;
-try{localStorage.setItem('__t','1');localStorage.removeItem('__t')}catch(e){storageOk=false}
-
-function normalize(d){
-  if(!d||!Array.isArray(d.finished)||!Array.isArray(d.semi)) throw new Error('数据格式不正确');
-  const normG=function(g,type){
-    return {
-      name:String(g.name||''), series:String(g.series||''), type:type,
-      categories:Array.isArray(g.categories)?g.categories.map(function(c){
-        return {series:String(c.series||''),category:String(c.category||''),code3:String(c.code3||''),
-                remark:String(c.remark||''),rule:String(c.rule||''),digits:String(c.digits||''),
-                picks:Array.isArray(c.picks)?c.picks.map(function(p){return String(p==null?'':p)}):[]};
-      }):[],
-      configs:Array.isArray(g.configs)?g.configs.map(function(c){
-        return {name:String(c.name||''),options:Array.isArray(c.options)?c.options.map(function(o){
-          return [String(o[0]==null?'':o[0]),String(o[1]==null?'':o[1])];
-        }):[]};
-      }):[]
-    };
-  };
-  return {finished:d.finished.map(function(g){return normG(g,'finished')}),
-          semi:d.semi.map(function(g){return normG(g,'semi')})};
-}
-function load(){
-  let raw=null;
-  if(storageOk){try{raw=localStorage.getItem(LS_KEY)}catch(e){raw=null}}
-  if(raw){try{data=normalize(JSON.parse(raw))}catch(e){data=null;toast('本地数据损坏，已恢复初始规则','warn')}}
-  if(!data){data=normalize(deepCopy(RAW_DATA));save()}
-}
-function save(){
-  if(!data)return;
-  if(storageOk){try{localStorage.setItem(LS_KEY,JSON.stringify(data))}catch(e){storageOk=false;toast('浏览器存储不可用，修改仅保留在内存','warn')}}
-}
-/* 每类分组数组 */
-function groupsOf(type){return type==='semi'?data.semi:data.finished}
-/* 规则解析：期望长度 */
-function ruleSpec(cat,group){
-  const base=cat.code3||'';
-  const rule=cat.rule||'';
-  let flowN=NaN,cfgN=NaN;
-  const mf=rule.match(/(\d+)位流水码/), mc=rule.match(/(\d+)位配置码/);
-  if(mf)flowN=parseInt(mf[1],10);
-  if(mc)cfgN=parseInt(mc[1],10);
-  let expected=null;
-  if(!isNaN(flowN)||!isNaN(cfgN)){
-    expected=base.length+(isNaN(flowN)?0:flowN)+(isNaN(cfgN)?0:cfgN);
-  }else if(cat.digits&&!isNaN(parseInt(cat.digits,10))){
-    expected=parseInt(cat.digits,10);
-  }
-  return {base:base,flowN:flowN,cfgN:cfgN,expected:expected,rule:rule};
-}
-/* 检索索引 */
-function groupHay(g){
-  const parts=[g.name,g.series];
-  g.categories.forEach(function(c){parts.push(c.category,c.code3,c.remark,c.rule,c.digits)});
-  g.configs.forEach(function(c){parts.push(c.name);c.options.forEach(function(o){parts.push(o[0],o[1])})});
-  return parts.join(' ').toLowerCase();
-}
-/* ---------- 状态 ---------- */
-let view='browse';
-let browseType='all';
-let seriesFilter='';
-let composeType='finished', composeGi=0, composeCi=0;
-let editType='finished', editGi=0;
-let dirty=false, saveTimer=null;
-
-function markDirty(){
-  dirty=true;
-  const el=$id('e-dirty'); if(el)el.textContent='● 有未保存的修改';
-  clearTimeout(saveTimer);
-  saveTimer=setTimeout(function(){persistNow()},600);
-}
-function persistNow(){
-  save(); dirty=false;
-  const el=$id('e-dirty'); if(el)el.textContent='';
-  toast('已保存','');
-}
-/* ---------- 视图切换 ---------- */
-function switchView(v){
-  view=v;
-  document.querySelectorAll('.tab').forEach(function(b){
-    b.classList.toggle('active',b.getAttribute('data-view-tab')===v);
-  });
-  ['browse','compose','edit'].forEach(function(k){
-    $id('view-'+k).hidden=(k!==v);
-  });
-  if(v==='browse')renderBrowse();
-  else if(v==='compose')renderCompose();
-  else renderEdit();
-}
-/* ---------- 规则库检索 ---------- */
-function renderStats(){
-  const finN=data.finished.length;
-  const finCats=data.finished.reduce(function(s,g){return s+g.categories.length},0);
-  const semiN=data.semi.length;
-  let cfgN=0,optN=0;
-  data.finished.concat(data.semi).forEach(function(g){g.configs.forEach(function(c){cfgN++;optN+=c.options.length})});
-  $id('stats-bar').innerHTML=
-    '<div class="stat"><b>'+finN+'</b><span>成品规则组</span></div>'+
-    '<div class="stat"><b>'+finCats+'</b><span>成品分类</span></div>'+
-    '<div class="stat"><b>'+semiN+'</b><span>半成品</span></div>'+
-    '<div class="stat"><b>'+cfgN+'</b><span>配置项 · '+optN+' 选项</span></div>';
-}
-function cfgChipsHTML(cfg){
-  if(!cfg.options.length)return '<span class="muted" style="font-size:12px">暂无选项</span>';
-  return cfg.options.map(function(o){
-    const v=o[0],c=o[1];
-    const vh=v?esc(v):'<span class="v-empty">（空值）</span>';
-    const ch=c?esc(c):'<span class="nof">无码</span>';
-    return '<span class="chip">'+vh+'<i>'+ch+'</i></span>';
-  }).join('');
-}
-function cfgBlockHTML(cfg){
-  return '<div class="cfg-block"><div class="cname">'+esc(cfg.name||'')+
-    (cfg.name?'':'<span class="empty">（未命名配置）</span>')+
-    '<span class="badge gray" style="font-size:10px;padding:1px 6px">'+cfg.options.length+' 选项</span></div>'+
-    '<div class="opts">'+cfgChipsHTML(cfg)+'</div></div>';
-}
-function composeBtnHTML(t,gi,ci){
-  return '<button class="btn sm" data-act="compose-go" data-t="'+t+'" data-g="'+gi+'" data-c="'+ci+'" title="跳转到编码编制">编制编码</button>';
-}
-function renderBrowse(){
-  renderStats();
-  // 系列筛选下拉（成品）
-  const sf=$id('series-filter');
-  const cur=sf.value;
-  const series=[];
-  data.finished.forEach(function(g){if(g.series&&series.indexOf(g.series)<0)series.push(g.series)});
-  sf.innerHTML='<option value="">全部系列</option>'+series.sort().map(function(s){return '<option value="'+esc(s)+'">'+esc(s)+'</option>'}).join('');
-  sf.value=cur;
-  // 过滤
-  const qv=$id('q').value.trim().toLowerCase();
-  const list=[];
-  const pushT=function(arr,t){arr.forEach(function(g,i){list.push({t:t,g:g,i:i})})};
-  if(browseType!=='semi'&&seriesFilter==='')pushT(data.finished,'finished');
-  else if(browseType!=='semi'){data.finished.forEach(function(g,i){if(g.series===seriesFilter)list.push({t:'finished',g:g,i:i})})}
-  if(browseType!=='finished')pushT(data.semi,'semi');
-  const filtered=list.filter(function(it){
-    if(qv&&groupHay(it.g).indexOf(qv)<0)return false;
-    return true;
-  });
-  if(!filtered.length){$id('browse-list').innerHTML='<div class="empty-tip">未找到匹配的规则，可调整关键词或在「编辑管理」中新增。</div>';return}
-  $id('browse-list').innerHTML=filtered.map(function(it){
-    const g=it.g,t=it.t,gi=it.i;
-    const isFin=t==='finished';
-    const badge=isFin?'<span class="badge f">成品</span><span class="badge mono gray">'+esc(g.series||'?')+'</span>':'<span class="badge s">半成品</span>';
-    let table;
-    if(isFin){
-      table='<table class="cat-table"><colgroup><col style="width:20%"><col style="width:11%"><col style="width:15%"><col style="width:34%"><col style="width:20%"></colgroup><thead><tr><th>分类名称</th><th>分类代码</th><th>备注</th><th>编码规则</th><th>操作</th></tr></thead><tbody>'+
-        g.categories.map(function(c,ci){
-          return '<tr><td>'+esc(c.category||'—')+'</td><td class="code">'+(c.code3?esc(c.code3):'<span class="muted">缺</span>')+'</td><td>'+esc(c.remark||'')+'</td><td><code class="c">'+esc(c.rule||'')+'</code></td><td>'+composeBtnHTML(t,gi,ci)+'</td></tr>';
-        }).join('')+'</tbody></table>';
-    }else{
-      const c=g.categories[0]||{};
-      table='<table class="cat-table"><colgroup><col style="width:16%"><col style="width:20%"><col style="width:30%"><col style="width:14%"><col style="width:20%"></colgroup><thead><tr><th>代号</th><th>编码规则</th><th>位数</th><th>分类</th><th>操作</th></tr></thead><tbody>'+
-        '<tr><td class="code">'+esc(c.code3||'')+'</td><td><code class="c">'+esc(c.rule||'')+'</code></td><td>'+esc(c.digits||'')+'</td><td>'+esc(c.category||'')+'</td><td>'+composeBtnHTML(t,gi,0)+'</td></tr></tbody></table>';
+const RAW_DATA = {
+  "finished": [
+    {
+      "name": "氛围灯模组光色检测校准系统",
+      "series": "01",
+      "type": "finished",
+      "categories": [
+        {
+          "series": "A1",
+          "category": "GSA1000-A",
+          "code3": "A1A",
+          "remark": "收光器",
+          "rule": "A1A+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "外径100",
+            "G-1-01",
+            "有",
+            "403",
+            "海康",
+            "LIN",
+            ""
+          ]
+        },
+        {
+          "series": "A1",
+          "category": "GSA1000-B",
+          "code3": "A1B",
+          "remark": "积分球",
+          "rule": "A1B+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "外径150",
+            "G-2-01",
+            "无",
+            "503",
+            "霍尼韦尔",
+            "SWD",
+            ""
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "name": "积分球外径",
+          "options": [
+            [
+              "外径100",
+              "1"
+            ],
+            [
+              "外径150",
+              "2"
+            ],
+            [
+              "外径300",
+              "3"
+            ],
+            [
+              "外径500",
+              "4"
+            ],
+            [
+              "外径1000",
+              "5"
+            ],
+            [
+              "外径2000",
+              "6"
+            ]
+          ]
+        },
+        {
+          "name": "光谱仪型号",
+          "options": [
+            [
+              "G-1-01",
+              "1"
+            ],
+            [
+              "G-2-01",
+              "2"
+            ],
+            [
+              "G-2-02",
+              "3"
+            ],
+            [
+              "G-3-01",
+              "4"
+            ],
+            [
+              "G-4-01",
+              "5"
+            ],
+            [
+              "G-06",
+              "6"
+            ],
+            [
+              "SPEC8000",
+              "7"
+            ]
+          ]
+        },
+        {
+          "name": "伺服轴",
+          "options": [
+            [
+              "有",
+              "X"
+            ],
+            [
+              "无",
+              "0"
+            ]
+          ]
+        },
+        {
+          "name": "LIN",
+          "options": [
+            [
+              "403",
+              "1"
+            ],
+            [
+              "503",
+              "2"
+            ],
+            [
+              "505",
+              "3"
+            ]
+          ]
+        },
+        {
+          "name": "扫码枪",
+          "options": [
+            [
+              "海康",
+              "K"
+            ],
+            [
+              "霍尼韦尔",
+              "R"
+            ]
+          ]
+        },
+        {
+          "name": "烧录协议",
+          "options": [
+            [
+              "LIN",
+              "L"
+            ],
+            [
+              "SWD",
+              "S"
+            ]
+          ]
+        },
+        {
+          "name": "null",
+          "options": [
+            [
+              "null",
+              "0"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LED模组光色检测校准系统",
+      "series": "02",
+      "type": "finished",
+      "categories": [
+        {
+          "series": "A2",
+          "category": "GSA2000",
+          "code3": "A20",
+          "remark": "积分球",
+          "rule": "A20+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "外径500",
+            "G-3-01",
+            "403",
+            "",
+            "",
+            "",
+            ""
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "name": "积分球外径",
+          "options": [
+            [
+              "外径100",
+              "1"
+            ],
+            [
+              "外径150",
+              "2"
+            ],
+            [
+              "外径300",
+              "3"
+            ],
+            [
+              "外径500",
+              "4"
+            ],
+            [
+              "外径1000",
+              "5"
+            ],
+            [
+              "外径2000",
+              "6"
+            ]
+          ]
+        },
+        {
+          "name": "光谱仪型号",
+          "options": [
+            [
+              "G-1-01",
+              "1"
+            ],
+            [
+              "G-2-01",
+              "2"
+            ],
+            [
+              "G-2-02",
+              "3"
+            ],
+            [
+              "G-3-01",
+              "4"
+            ],
+            [
+              "G-4-01",
+              "5"
+            ],
+            [
+              "G-06",
+              "6"
+            ],
+            [
+              "SPEC8000",
+              "7"
+            ]
+          ]
+        },
+        {
+          "name": "LIN",
+          "options": [
+            [
+              "403",
+              "1"
+            ],
+            [
+              "503",
+              "2"
+            ],
+            [
+              "504",
+              "3"
+            ]
+          ]
+        },
+        {
+          "name": "null",
+          "options": [
+            [
+              "null",
+              "0"
+            ]
+          ]
+        },
+        {
+          "name": "null",
+          "options": [
+            [
+              "null",
+              "0"
+            ]
+          ]
+        },
+        {
+          "name": "null",
+          "options": [
+            [
+              "null",
+              "0"
+            ]
+          ]
+        },
+        {
+          "name": "null",
+          "options": [
+            [
+              "null",
+              "0"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LED模组光色检测校准系统",
+      "series": "03",
+      "type": "finished",
+      "categories": [
+        {
+          "series": "A3",
+          "category": "GSA3000",
+          "code3": "A30",
+          "remark": "",
+          "rule": "A30+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "外径2000",
+            "G-06",
+            "504",
+            "",
+            "",
+            "",
+            ""
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "name": "积分球外径",
+          "options": [
+            [
+              "外径100",
+              "1"
+            ],
+            [
+              "外径150",
+              "2"
+            ],
+            [
+              "外径300",
+              "3"
+            ],
+            [
+              "外径500",
+              "4"
+            ],
+            [
+              "外径1000",
+              "5"
+            ],
+            [
+              "外径2000",
+              "6"
+            ]
+          ]
+        },
+        {
+          "name": "光谱仪型号",
+          "options": [
+            [
+              "G-1-01",
+              "1"
+            ],
+            [
+              "G-2-01",
+              "2"
+            ],
+            [
+              "G-2-02",
+              "3"
+            ],
+            [
+              "G-3-01",
+              "4"
+            ],
+            [
+              "G-4-01",
+              "5"
+            ],
+            [
+              "G-06",
+              "6"
+            ],
+            [
+              "SPEC8000",
+              "7"
+            ]
+          ]
+        },
+        {
+          "name": "LIN",
+          "options": [
+            [
+              "403",
+              "1"
+            ],
+            [
+              "503",
+              "2"
+            ],
+            [
+              "504",
+              "3"
+            ]
+          ]
+        },
+        {
+          "name": "null",
+          "options": [
+            [
+              "null",
+              "0"
+            ]
+          ]
+        },
+        {
+          "name": "null",
+          "options": [
+            [
+              "null",
+              "0"
+            ]
+          ]
+        },
+        {
+          "name": "null",
+          "options": [
+            [
+              "null",
+              "0"
+            ]
+          ]
+        },
+        {
+          "name": "null",
+          "options": [
+            [
+              "null",
+              "0"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "智能相机",
+      "series": "04",
+      "type": "finished",
+      "categories": [
+        {
+          "series": "A5",
+          "category": "GSA5000",
+          "code3": "A5L",
+          "remark": "简化",
+          "rule": "A5L+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "",
+            "24V",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "series": "A5",
+          "category": "GSA5000",
+          "code3": "A5S",
+          "remark": "标准",
+          "rule": "A5S+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "",
+            "36v",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "series": "A5",
+          "category": "GSA5000",
+          "code3": "A5C",
+          "remark": "定制",
+          "rule": "A5C+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "name": "相机",
+          "options": [
+            [
+              "null",
+              "0"
+            ]
+          ]
+        },
+        {
+          "name": "电压",
+          "options": [
+            [
+              "24V",
+              "1"
+            ],
+            [
+              "36v",
+              "2"
+            ]
+          ]
+        },
+        {
+          "name": "性能",
+          "options": [
+            [
+              "null",
+              "0"
+            ]
+          ]
+        },
+        {
+          "name": "null",
+          "options": [
+            [
+              "null",
+              "0"
+            ]
+          ]
+        },
+        {
+          "name": "null",
+          "options": [
+            [
+              "null",
+              "0"
+            ]
+          ]
+        },
+        {
+          "name": "null",
+          "options": [
+            [
+              "null",
+              "0"
+            ]
+          ]
+        },
+        {
+          "name": "null",
+          "options": [
+            [
+              "null",
+              "0"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "光色电热测试系统",
+      "series": "05",
+      "type": "finished",
+      "categories": [
+        {
+          "series": "A6",
+          "category": "GSA6000",
+          "code3": "A60",
+          "remark": "",
+          "rule": "A60+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "name": "积分球外径",
+          "options": [
+            [
+              "外径100",
+              "1"
+            ],
+            [
+              "外径150",
+              "2"
+            ],
+            [
+              "外径300",
+              "3"
+            ],
+            [
+              "外径500",
+              "4"
+            ],
+            [
+              "外径1000",
+              "5"
+            ],
+            [
+              "外径2000",
+              "6"
+            ]
+          ]
+        },
+        {
+          "name": "光谱仪型号",
+          "options": [
+            [
+              "G-1-01",
+              "1"
+            ],
+            [
+              "G-2-01",
+              "2"
+            ],
+            [
+              "G-2-02",
+              "3"
+            ],
+            [
+              "G-3-01",
+              "4"
+            ],
+            [
+              "G-4-01",
+              "5"
+            ],
+            [
+              "G-06",
+              "6"
+            ],
+            [
+              "SPEC8000",
+              "7"
+            ]
+          ]
+        },
+        {
+          "name": "LIN",
+          "options": [
+            [
+              "403",
+              "1"
+            ],
+            [
+              "503",
+              "2"
+            ],
+            [
+              "504",
+              "3"
+            ]
+          ]
+        },
+        {
+          "name": "程控电源",
+          "options": [
+            [
+              "FTL8005P",
+              "1"
+            ],
+            [
+              "FTL3010",
+              "2"
+            ],
+            [
+              "FTL3030",
+              "3"
+            ],
+            [
+              "FTL3003X",
+              "4"
+            ]
+          ]
+        },
+        {
+          "name": "null",
+          "options": [
+            [
+              "null",
+              "0"
+            ]
+          ]
+        },
+        {
+          "name": "null",
+          "options": [
+            [
+              "null",
+              "0"
+            ]
+          ]
+        },
+        {
+          "name": "null",
+          "options": [
+            [
+              "null",
+              "0"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "氛围灯模组多通道光色检测校准系统",
+      "series": "06",
+      "type": "finished",
+      "categories": [
+        {
+          "series": "B1",
+          "category": "GSB1000",
+          "code3": "B11",
+          "remark": "1通道",
+          "rule": "B11+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "1*1*1.8",
+            "",
+            "",
+            "FTL8005P",
+            "8155",
+            "44042D",
+            ""
+          ]
+        },
+        {
+          "series": "B1",
+          "category": "GSB1000",
+          "code3": "B12",
+          "remark": "2通道",
+          "rule": "B12+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "1.2*1.2*2",
+            "",
+            "",
+            "FTL3010",
+            "8165",
+            "",
+            ""
+          ]
+        },
+        {
+          "series": "B1",
+          "category": "GSB1000",
+          "code3": "B14",
+          "remark": "4通道",
+          "rule": "B14+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "",
+            "",
+            "",
+            "FTL3030",
+            "8246B",
+            "",
+            ""
+          ]
+        },
+        {
+          "series": "B1",
+          "category": "GSB1000",
+          "code3": "B16",
+          "remark": "6通道",
+          "rule": "B16+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "",
+            "",
+            "",
+            "FTL3003-X",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "series": "B1",
+          "category": "GSB1000",
+          "code3": "B18",
+          "remark": "8通道",
+          "rule": "B18+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "name": "尺寸",
+          "options": [
+            [
+              "1*1*1.8m",
+              "a"
+            ],
+            [
+              "1.2*1.2*2m",
+              "b"
+            ]
+          ]
+        },
+        {
+          "name": "收光器通道",
+          "options": [
+            [
+              "1通道",
+              "1"
+            ],
+            [
+              "2通道",
+              "2"
+            ],
+            [
+              "4通道",
+              "4"
+            ],
+            [
+              "6通道",
+              "6"
+            ],
+            [
+              "8通道",
+              "8"
+            ]
+          ]
+        },
+        {
+          "name": "光谱仪型号",
+          "options": [
+            [
+              "G-1-01",
+              "1"
+            ],
+            [
+              "G-2-01",
+              "2"
+            ],
+            [
+              "G-2-02",
+              "3"
+            ],
+            [
+              "G-3-01",
+              "4"
+            ],
+            [
+              "G-4-01",
+              "5"
+            ],
+            [
+              "G-06",
+              "6"
+            ],
+            [
+              "SPEC8000",
+              "7"
+            ]
+          ]
+        },
+        {
+          "name": "程控电源",
+          "options": [
+            [
+              "FTL8005P",
+              "1"
+            ],
+            [
+              "FTL3010",
+              "2"
+            ],
+            [
+              "FTL3030",
+              "3"
+            ],
+            [
+              "FTL3003-X",
+              "4"
+            ]
+          ]
+        },
+        {
+          "name": "万用表",
+          "options": [
+            [
+              "8155",
+              "1"
+            ],
+            [
+              "8165",
+              "2"
+            ],
+            [
+              "8246B",
+              "3"
+            ]
+          ]
+        },
+        {
+          "name": "采集卡",
+          "options": [
+            [
+              "44042D",
+              "1"
+            ]
+          ]
+        },
+        {
+          "name": "null",
+          "options": [
+            [
+              "null",
+              "0"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "氛围灯模组多通道光色检测校准系统",
+      "series": "07",
+      "type": "finished",
+      "categories": [
+        {
+          "series": "B2",
+          "category": "GSB2000",
+          "code3": "B21",
+          "remark": "1通道",
+          "rule": "B21+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "1*1*1.8",
+            "1通道",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "series": "B2",
+          "category": "GSB2000",
+          "code3": "B22",
+          "remark": "2通道",
+          "rule": "B22+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "1.2*1.2*2",
+            "2通道",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "series": "B2",
+          "category": "GSB2000",
+          "code3": "B24",
+          "remark": "4通道",
+          "rule": "B24+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "",
+            "4通道",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "series": "B2",
+          "category": "GSB2000",
+          "code3": "B26",
+          "remark": "6通道",
+          "rule": "B26+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "",
+            "6通道",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "series": "B2",
+          "category": "GSB2000",
+          "code3": "B28",
+          "remark": "8通道",
+          "rule": "B28+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "",
+            "8通道",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "name": "尺寸",
+          "options": [
+            [
+              "1*1*1.8m",
+              "a"
+            ],
+            [
+              "1.2*1.2*2m",
+              "b"
+            ]
+          ]
+        },
+        {
+          "name": "收光器通道",
+          "options": [
+            [
+              "1通道",
+              "1"
+            ],
+            [
+              "2通道",
+              "2"
+            ],
+            [
+              "4通道",
+              "4"
+            ],
+            [
+              "6通道",
+              "6"
+            ],
+            [
+              "8通道",
+              "8"
+            ]
+          ]
+        },
+        {
+          "name": "光谱仪型号",
+          "options": [
+            [
+              "G-1-01",
+              "1"
+            ],
+            [
+              "G-2-01",
+              "2"
+            ],
+            [
+              "G-2-02",
+              "3"
+            ],
+            [
+              "G-3-01",
+              "4"
+            ],
+            [
+              "G-4-01",
+              "5"
+            ],
+            [
+              "G-06",
+              "6"
+            ],
+            [
+              "SPEC8000",
+              "7"
+            ]
+          ]
+        },
+        {
+          "name": "程控电源",
+          "options": [
+            [
+              "FTL8005P",
+              "1"
+            ],
+            [
+              "FTL3010",
+              "2"
+            ],
+            [
+              "FTL3030",
+              "3"
+            ],
+            [
+              "FTL3003-X",
+              "4"
+            ]
+          ]
+        },
+        {
+          "name": "万用表",
+          "options": [
+            [
+              "8155",
+              "1"
+            ],
+            [
+              "8165",
+              "2"
+            ],
+            [
+              "8246B",
+              "3"
+            ]
+          ]
+        },
+        {
+          "name": "null",
+          "options": [
+            [
+              "null",
+              "0"
+            ]
+          ]
+        },
+        {
+          "name": "null",
+          "options": [
+            [
+              "null",
+              "0"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "汽车发光件实验室精准检测平台",
+      "series": "08",
+      "type": "finished",
+      "categories": [
+        {
+          "series": "GD",
+          "category": "GSD2000",
+          "code3": "D20",
+          "remark": "",
+          "rule": "D20+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "name": "相机",
+          "options": [
+            [
+              "null",
+              "0"
+            ]
+          ]
+        },
+        {
+          "name": "null",
+          "options": [
+            [
+              "null",
+              "0"
+            ]
+          ]
+        },
+        {
+          "name": "null",
+          "options": [
+            [
+              "null",
+              "0"
+            ]
+          ]
+        },
+        {
+          "name": "null",
+          "options": [
+            [
+              "null",
+              "0"
+            ]
+          ]
+        },
+        {
+          "name": "null",
+          "options": [
+            [
+              "null",
+              "0"
+            ]
+          ]
+        },
+        {
+          "name": "null",
+          "options": [
+            [
+              "null",
+              "0"
+            ]
+          ]
+        },
+        {
+          "name": "null",
+          "options": [
+            [
+              "null",
+              "0"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "外饰灯总成检测系统",
+      "series": "09",
+      "type": "finished",
+      "categories": [
+        {
+          "series": "GE",
+          "category": "GSE1000",
+          "code3": "E10",
+          "remark": "",
+          "rule": "E10+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "",
+            "",
+            "",
+            ""
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "name": "伺服轴",
+          "options": []
+        },
+        {
+          "name": "程控电源",
+          "options": []
+        },
+        {
+          "name": "电流采集卡",
+          "options": []
+        },
+        {
+          "name": "LIN",
+          "options": []
+        }
+      ]
+    },
+    {
+      "name": "氛围灯总成检测系统",
+      "series": "10",
+      "type": "finished",
+      "categories": [
+        {
+          "series": "F1",
+          "category": "GSF1000-A",
+          "code3": "F1A",
+          "remark": "直接取放",
+          "rule": "F1A+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "1200*800*2300",
+            "G3-26C",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "series": "F1",
+          "category": "GSF1000-B",
+          "code3": "F1B",
+          "remark": "模组进出",
+          "rule": "F1B+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "1200*1400*2300",
+            "G6-26C",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "series": "F1",
+          "category": "GSF1000-C",
+          "code3": "F1C",
+          "remark": "转盘",
+          "rule": "F1C+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "1200*1200*2000",
+            "G6-02B",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "series": "F1",
+          "category": "GSF1000-D",
+          "code3": "F1D",
+          "remark": "上下双层",
+          "rule": "F1D+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "1200*1200*2300",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "series": "F1",
+          "category": "GSF1000-E",
+          "code3": "F1E",
+          "remark": "天窗氛围灯",
+          "rule": "F1E+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "series": "F1",
+          "category": "GSF1000-F",
+          "code3": "F1F",
+          "remark": "非标",
+          "rule": "F1F+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "name": "尺寸",
+          "options": [
+            [
+              "A-1200*800*2300mm",
+              "a"
+            ],
+            [
+              "A-1600*800*2300/2400mm",
+              "b"
+            ],
+            [
+              "A-2000*800*2300mm",
+              "c"
+            ],
+            [
+              "A-定制尺寸",
+              "d"
+            ],
+            [
+              "B-1200*1400*2300mm",
+              "a"
+            ],
+            [
+              "B-1600*1400*2300/2400mm",
+              "b"
+            ],
+            [
+              "B-2000*1400*2300mm",
+              "c"
+            ],
+            [
+              "B-定制尺寸",
+              "d"
+            ],
+            [
+              "C-1200*1200*2000mm",
+              "a"
+            ],
+            [
+              "C-1600*1300*2300mm",
+              "b"
+            ],
+            [
+              "C-定制尺寸",
+              "d"
+            ],
+            [
+              "D-1200*1200*2300mm",
+              "a"
+            ],
+            [
+              "D-1600*1200*2300/2400mm",
+              "b"
+            ],
+            [
+              "D-2000*1200*2300mm",
+              "c"
+            ],
+            [
+              "D-定制尺寸",
+              "d"
+            ],
+            [
+              "E-定制尺寸",
+              "d"
+            ],
+            [
+              "F-定制尺寸",
+              "d"
+            ]
+          ]
+        },
+        {
+          "name": "相机",
+          "options": [
+            [
+              "G3-26C",
+              "1"
+            ],
+            [
+              "G3-61C",
+              "2"
+            ],
+            [
+              "G6-26B",
+              "3"
+            ],
+            [
+              "G6-26C",
+              "4"
+            ],
+            [
+              "G6-62B",
+              "5"
+            ],
+            [
+              "G6-62C",
+              "6"
+            ],
+            [
+              "G6-02B",
+              "7"
+            ]
+          ]
+        },
+        {
+          "name": "伺服轴",
+          "options": [
+            [
+              "有",
+              "X"
+            ],
+            [
+              "无",
+              "0"
+            ]
+          ]
+        },
+        {
+          "name": "程控电源",
+          "options": [
+            [
+              "FTL8005P",
+              "1"
+            ],
+            [
+              "FTL3010",
+              "2"
+            ],
+            [
+              "FTL3030",
+              "3"
+            ],
+            [
+              "FTL3003-X",
+              "4"
+            ]
+          ]
+        },
+        {
+          "name": "电流采集卡",
+          "options": [
+            [
+              "44042D",
+              "1"
+            ]
+          ]
+        },
+        {
+          "name": "LIN",
+          "options": [
+            [
+              "403",
+              "1"
+            ],
+            [
+              "503",
+              "2"
+            ],
+            [
+              "505",
+              "3"
+            ]
+          ]
+        },
+        {
+          "name": "null",
+          "options": [
+            [
+              "null",
+              "0"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "氛围灯总成检测校准系统",
+      "series": "11",
+      "type": "finished",
+      "categories": [
+        {
+          "series": "GG",
+          "category": "GSG1000-A",
+          "code3": "G1A",
+          "remark": "",
+          "rule": "G1A+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "同GSF100",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "series": "GG",
+          "category": "GSG1000-B",
+          "code3": "G1B",
+          "remark": "",
+          "rule": "G1B+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "同GSF100",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "series": "GG",
+          "category": "GSG1000-C",
+          "code3": "G1C",
+          "remark": "",
+          "rule": "G1C+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "同GSF100",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "series": "GG",
+          "category": "GSG1000-D",
+          "code3": "G1D",
+          "remark": "",
+          "rule": "G1D+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "同GSF100",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "name": "尺寸",
+          "options": [
+            [
+              "A-1200*800*2300",
+              "a"
+            ],
+            [
+              "A-1600*800*2300/2400",
+              "b"
+            ],
+            [
+              "A-2000*800*2300",
+              "c"
+            ],
+            [
+              "A-定制尺寸",
+              "d"
+            ],
+            [
+              "B-1200*1400*2300",
+              "a"
+            ],
+            [
+              "B-1600*1400*2300/2400",
+              "b"
+            ],
+            [
+              "B-2000*1400*2300",
+              "c"
+            ],
+            [
+              "B-定制尺寸",
+              "d"
+            ],
+            [
+              "C-1200*1200*2000",
+              "a"
+            ],
+            [
+              "C-1600*1300*2300",
+              "b"
+            ],
+            [
+              "C-定制尺寸",
+              "c"
+            ],
+            [
+              "D-1200*1200*2300",
+              "a"
+            ],
+            [
+              "D-1600*1200*2300/2400",
+              "b"
+            ],
+            [
+              "D-2000*1200*2300",
+              "c"
+            ],
+            [
+              "D-定制尺寸",
+              "d"
+            ]
+          ]
+        },
+        {
+          "name": "相机",
+          "options": [
+            [
+              "G3-26C",
+              "1"
+            ],
+            [
+              "G3-61C",
+              "2"
+            ],
+            [
+              "G6-36B",
+              "3"
+            ],
+            [
+              "G6-26C",
+              "4"
+            ],
+            [
+              "G6-62B",
+              "5"
+            ],
+            [
+              "G6-62C",
+              "6"
+            ],
+            [
+              "G6-02B",
+              "7"
+            ]
+          ]
+        },
+        {
+          "name": "伺服轴",
+          "options": [
+            [
+              "有",
+              "X"
+            ],
+            [
+              "无",
+              "0"
+            ]
+          ]
+        },
+        {
+          "name": "程控电源",
+          "options": [
+            [
+              "FTL8005P",
+              "1"
+            ],
+            [
+              "FTL3010",
+              "2"
+            ],
+            [
+              "FTL3030",
+              "3"
+            ],
+            [
+              "FTL3003-X",
+              "4"
+            ]
+          ]
+        },
+        {
+          "name": "电流采集卡",
+          "options": [
+            [
+              "44042D",
+              "1"
+            ]
+          ]
+        },
+        {
+          "name": "LIN",
+          "options": [
+            [
+              "403",
+              "1"
+            ],
+            [
+              "503",
+              "2"
+            ],
+            [
+              "504",
+              "3"
+            ],
+            [
+              "505",
+              "4"
+            ]
+          ]
+        },
+        {
+          "name": "null",
+          "options": [
+            [
+              "null",
+              "0"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "氛围灯模组多通道烧录系统",
+      "series": "12",
+      "type": "finished",
+      "categories": [
+        {
+          "series": "GH",
+          "category": "GSH1000-4",
+          "code3": "H11",
+          "remark": "4通道",
+          "rule": "H11+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "1*1*1.8",
+            "4",
+            "图莫斯",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "series": "GH",
+          "category": "GSH1000-8",
+          "code3": "H12",
+          "remark": "8通道",
+          "rule": "H12+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "1.2*1.2*2",
+            "8",
+            "戎象",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "series": "GH",
+          "category": "GSH1000-16",
+          "code3": "H13",
+          "remark": "16通道",
+          "rule": "H13+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "",
+            "16",
+            "图莫斯+戎象",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "series": "GH",
+          "category": "GSH1000-24",
+          "code3": "H14",
+          "remark": "24通道",
+          "rule": "H14+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "",
+            "24",
+            "力捷丰",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "series": "GH",
+          "category": "GSH2000-4",
+          "code3": "H21",
+          "remark": "4通道",
+          "rule": "H21+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "series": "GH",
+          "category": "GSH2000-8",
+          "code3": "H22",
+          "remark": "8通道",
+          "rule": "H22+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "series": "GH",
+          "category": "GSH2000-16",
+          "code3": "H23",
+          "remark": "16通道",
+          "rule": "H23+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "series": "GH",
+          "category": "GSH2000-24",
+          "code3": "H24",
+          "remark": "24通道",
+          "rule": "H24+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "name": "尺寸",
+          "options": [
+            [
+              "1*1*1.8m",
+              "a"
+            ],
+            [
+              "1.2*1.2*2m",
+              "b"
+            ]
+          ]
+        },
+        {
+          "name": "烧录通道",
+          "options": [
+            [
+              "4",
+              "1"
+            ],
+            [
+              "8",
+              "2"
+            ],
+            [
+              "16",
+              "3"
+            ],
+            [
+              "24",
+              "4"
+            ]
+          ]
+        },
+        {
+          "name": "烧录器品牌",
+          "options": [
+            [
+              "图莫斯",
+              "1"
+            ],
+            [
+              "戎象",
+              "2"
+            ],
+            [
+              "图莫斯+戎象",
+              "3"
+            ],
+            [
+              "力捷丰",
+              "4"
+            ]
+          ]
+        },
+        {
+          "name": "烧录协议",
+          "options": [
+            [
+              "LIN",
+              "L"
+            ],
+            [
+              "SWD",
+              "S"
+            ]
+          ]
+        },
+        {
+          "name": "null",
+          "options": [
+            [
+              "null",
+              "0"
+            ]
+          ]
+        },
+        {
+          "name": "null",
+          "options": [
+            [
+              "null",
+              "0"
+            ]
+          ]
+        },
+        {
+          "name": "null",
+          "options": [
+            [
+              "null",
+              "0"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "氛围灯PCBA产品烧录检测校准系统",
+      "series": "13",
+      "type": "finished",
+      "categories": [
+        {
+          "series": "HB",
+          "category": "GSHB1000",
+          "code3": "HB1",
+          "remark": "4通道",
+          "rule": "HB1+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "1*1*1.8",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "series": "HB",
+          "category": "GSHB1000",
+          "code3": "HB2",
+          "remark": "8通道",
+          "rule": "HB2+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "1.2*1.2*2",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "series": "HB",
+          "category": "GSHB1000",
+          "code3": "HB3",
+          "remark": "16通道",
+          "rule": "HB3+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "series": "HB",
+          "category": "GSHB1000",
+          "code3": "HB4",
+          "remark": "24通道",
+          "rule": "HB4+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "name": "尺寸",
+          "options": [
+            [
+              "1*1*1.8m",
+              "a"
+            ],
+            [
+              "1.2*1.2*2m",
+              "b"
+            ]
+          ]
+        },
+        {
+          "name": "烧录通道",
+          "options": [
+            [
+              "4",
+              "1"
+            ],
+            [
+              "8",
+              "2"
+            ],
+            [
+              "16",
+              "3"
+            ],
+            [
+              "24",
+              "4"
+            ]
+          ]
+        },
+        {
+          "name": "烧录器品牌",
+          "options": [
+            [
+              "图莫斯",
+              "1"
+            ],
+            [
+              "戎象",
+              "2"
+            ],
+            [
+              "图莫斯+戎象",
+              "3"
+            ],
+            [
+              "力捷丰",
+              "4"
+            ]
+          ]
+        },
+        {
+          "name": "收光器通道",
+          "options": [
+            [
+              "1通道",
+              "1"
+            ],
+            [
+              "2通道",
+              "2"
+            ],
+            [
+              "4通道",
+              "4"
+            ],
+            [
+              "6通道",
+              "6"
+            ],
+            [
+              "8通道",
+              "8"
+            ]
+          ]
+        },
+        {
+          "name": "光谱仪",
+          "options": [
+            [
+              "G-1-01",
+              "1"
+            ],
+            [
+              "G-2-01",
+              "2"
+            ],
+            [
+              "G-2-02",
+              "3"
+            ],
+            [
+              "G-3-01",
+              "4"
+            ],
+            [
+              "G-4-01",
+              "5"
+            ],
+            [
+              "G-06",
+              "6"
+            ],
+            [
+              "SPEC8000",
+              "7"
+            ]
+          ]
+        },
+        {
+          "name": "万用表",
+          "options": [
+            [
+              "8155",
+              ""
+            ],
+            [
+              "8165",
+              ""
+            ],
+            [
+              "8246B",
+              ""
+            ]
+          ]
+        },
+        {
+          "name": "null",
+          "options": [
+            [
+              "null",
+              "0"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "微透镜模组光学测量分析系统",
+      "series": "14",
+      "type": "finished",
+      "categories": [
+        {
+          "series": "GM",
+          "category": "GSM1000",
+          "code3": "M10",
+          "remark": "",
+          "rule": "M10+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            ""
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "name": "相机",
+          "options": []
+        }
+      ]
+    },
+    {
+      "name": "光学质量巡检仪",
+      "series": "15",
+      "type": "finished",
+      "categories": [
+        {
+          "series": "GL",
+          "category": "GSL1000",
+          "code3": "L10",
+          "remark": "",
+          "rule": "L10+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "透镜+色彩传感器"
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "name": "采集头",
+          "options": [
+            [
+              "透镜+色彩传感器",
+              "1"
+            ],
+            [
+              "待定",
+              "2"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "智能光源色卡",
+      "series": "16",
+      "type": "finished",
+      "categories": [
+        {
+          "series": "GS",
+          "category": "GSS1000-H",
+          "code3": "S1H",
+          "remark": "高亮",
+          "rule": "S1H+2位流水码+7位配置码",
+          "digits": "",
+          "picks": []
+        },
+        {
+          "series": "GS",
+          "category": "GSS1000-L",
+          "code3": "S1L",
+          "remark": "低亮",
+          "rule": "S1L+2位流水码+7位配置码",
+          "digits": "",
+          "picks": []
+        }
+      ],
+      "configs": []
+    },
+    {
+      "name": "工装",
+      "series": "17",
+      "type": "finished",
+      "categories": [
+        {
+          "series": "GE",
+          "category": "EOL",
+          "code3": "EOL",
+          "remark": "总成检测工装",
+          "rule": "EOL+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "一",
+            "无",
+            "客户自配",
+            "手动",
+            "无",
+            "",
+            ""
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "name": "一模几穴",
+          "options": [
+            [
+              "一",
+              "1"
+            ],
+            [
+              "二",
+              "2"
+            ],
+            [
+              "三",
+              "3"
+            ],
+            [
+              "四",
+              "4"
+            ]
+          ]
+        },
+        {
+          "name": "打点",
+          "options": [
+            [
+              "无",
+              "0"
+            ],
+            [
+              "OK打点",
+              "K"
+            ],
+            [
+              "NG打点",
+              "N"
+            ]
+          ]
+        },
+        {
+          "name": "上电",
+          "options": [
+            [
+              "客户自配",
+              "0"
+            ],
+            [
+              "手动",
+              "M"
+            ],
+            [
+              "自动",
+              "A"
+            ]
+          ]
+        },
+        {
+          "name": "压紧",
+          "options": [
+            [
+              "手动",
+              "M"
+            ],
+            [
+              "自动",
+              "A"
+            ]
+          ]
+        },
+        {
+          "name": "自动扫码",
+          "options": [
+            [
+              "无",
+              "0"
+            ],
+            [
+              "有",
+              "X"
+            ]
+          ]
+        },
+        {
+          "name": "null",
+          "options": [
+            [
+              "null",
+              "0"
+            ]
+          ]
+        },
+        {
+          "name": "null",
+          "options": [
+            [
+              "null",
+              "0"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "工装",
+      "series": "18",
+      "type": "finished",
+      "categories": [
+        {
+          "series": "GP",
+          "category": "PCBA",
+          "code3": "PCB",
+          "remark": "校准烧录工装",
+          "rule": "PCB+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "校准",
+            "050"
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "name": "校准烧录",
+          "options": [
+            [
+              "校准",
+              "1"
+            ],
+            [
+              "烧录",
+              "2"
+            ],
+            [
+              "校准+烧录",
+              "3"
+            ]
+          ]
+        },
+        {
+          "name": "探针型号",
+          "options": [
+            [
+              "050",
+              "1"
+            ],
+            [
+              "075",
+              "2"
+            ],
+            [
+              "100",
+              "3"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "工装",
+      "series": "19",
+      "type": "finished",
+      "categories": [
+        {
+          "series": "A1",
+          "category": "A-1",
+          "code3": "A10",
+          "remark": "单板工装",
+          "rule": "A10+2位流水码+7位配置码",
+          "digits": "",
+          "picks": [
+            "无"
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "name": "探针",
+          "options": [
+            [
+              "无",
+              "0"
+            ],
+            [
+              "050",
+              "1"
+            ],
+            [
+              "075",
+              "2"
+            ],
+            [
+              "100",
+              "3"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "工装",
+      "series": "20",
+      "type": "finished",
+      "categories": [
+        {
+          "series": "A3",
+          "category": "A-3",
+          "code3": "A30",
+          "remark": "积分球工装",
+          "rule": "A30+9位流水码",
+          "digits": "",
+          "picks": []
+        }
+      ],
+      "configs": []
+    },
+    {
+      "name": "服务",
+      "series": "21",
+      "type": "finished",
+      "categories": [
+        {
+          "series": "",
+          "category": "技术服务-EOL",
+          "code3": "SE1",
+          "remark": "",
+          "rule": "SE1+9位流水码",
+          "digits": "",
+          "picks": []
+        },
+        {
+          "series": "21",
+          "category": "升级维护-EOL",
+          "code3": "SE2",
+          "remark": "",
+          "rule": "SE2+9位流水码",
+          "digits": "",
+          "picks": []
+        },
+        {
+          "series": "21",
+          "category": "技术服务-PCBA",
+          "code3": "SP1",
+          "remark": "",
+          "rule": "SP1+9位流水码",
+          "digits": "",
+          "picks": []
+        },
+        {
+          "series": "21",
+          "category": "升级维护-PCBA",
+          "code3": "SP2",
+          "remark": "",
+          "rule": "SP2+9位流水码",
+          "digits": "",
+          "picks": []
+        }
+      ],
+      "configs": []
+    },
+    {
+      "name": "载板",
+      "series": "22",
+      "type": "finished",
+      "categories": [
+        {
+          "series": "",
+          "category": "ZB",
+          "code3": "ZB0",
+          "remark": "",
+          "rule": "ZB0+9位流水码",
+          "digits": "",
+          "picks": []
+        }
+      ],
+      "configs": []
+    },
+    {
+      "name": "其他",
+      "series": "23",
+      "type": "finished",
+      "categories": [
+        {
+          "series": "",
+          "category": "QT",
+          "code3": "",
+          "remark": "",
+          "rule": "+2位流水码+7位配置码",
+          "digits": "",
+          "picks": []
+        }
+      ],
+      "configs": []
     }
-    return '<article class="card">'+
-      '<header class="card-hd"><div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;min-width:0">'+
-        '<h3>'+esc(g.name||'（未命名）')+'</h3><div class="card-badges">'+badge+'<span class="badge gray">'+g.categories.length+' 分类</span>'+(g.configs.length?'<span class="badge gray">'+g.configs.length+' 配置</span>':'')+'</div></div>'+
-        '<button class="btn sm" data-act="compose-go" data-t="'+t+'" data-g="'+gi+'" data-c="0">编制编码</button></header>'+
-      '<div class="cat-table-wrap">'+table+'</div>'+
-      (g.configs.length?'<details class="cfg-toggle"><summary>配置结构（'+g.configs.length+' 项配置 / '+
-        g.configs.reduce(function(s,c){return s+c.options.length},0)+' 选项）<span class="muted" style="font-size:11px">点击展开</span></summary>'+
-        '<div class="cfg-body">'+g.configs.map(cfgBlockHTML).join('')+'</div></details>':'')+
-      '</article>';
-  }).join('');
-}
-/* ---------- 编码编制 ---------- */
-function renderCompose(){
-  const arr=groupsOf(composeType);
-  if(!arr.length){toast('暂无数据','warn');return}
-  if(composeGi>=arr.length)composeGi=0;
-  $id('c-product').innerHTML=arr.map(function(g,i){
-    return '<option value="'+i+'">'+esc(g.name)+(g.series?'（'+esc(g.series)+'）':'')+' · '+g.categories.length+' 分类</option>';
-  }).join('');
-  $id('c-product').value=String(composeGi);
-  renderComposeCat();
-}
-function renderComposeCat(){
-  const g=groupsOf(composeType)[composeGi];
-  if(!g)return;
-  const cs=$id('c-category');
-  if(composeType==='semi'){
-    const c=g.categories[0]||{};
-    cs.innerHTML='<option value="0">'+esc(g.name)+'（'+esc(c.code3||'')+'）</option>';
-    composeCi=0;
-  }else{
-    cs.innerHTML=g.categories.map(function(c,i){
-      return '<option value="'+i+'">'+esc(c.category||'（未命名）')+'（'+esc(c.code3||'缺代码')+'）'+(c.remark?' · '+esc(c.remark):'')+'</option>';
-    }).join('');
-    if(composeCi>=g.categories.length)composeCi=0;
-    cs.value=String(composeCi);
-  }
-  updateComposeBody();
-}
-function updateComposeBody(){
-  const g=groupsOf(composeType)[composeGi];
-  const c=g&&(g.categories[composeCi]||g.categories[0]);
-  if(!g||!c){
-    $id('c-rulebox').innerHTML='';$id('c-configs').innerHTML='';
-    $id('c-ruletext').textContent='';updatePreview();return;
-  }
-  const spec=ruleSpec(c,g);
-  $id('c-rulebox').innerHTML=
-    '<div><b>编码规则：</b><code class="c">'+esc(c.rule||'（未填写）')+'</code>'+
-    (c.digits?'　<b>位数：</b>'+esc(c.digits):'')+
-    (c.remark?'　<b>备注：</b>'+esc(c.remark):'')+'</div>'+
-    (c.category?'<div class="muted" style="font-size:12px;margin-top:4px">分类：'+esc(c.category)+(c.code3?' · 代码 '+esc(c.code3):'')+'</div>':'');
-  $id('c-ruletext').textContent=c.rule||'';
-  $id('c-configs').innerHTML=g.configs.map(function(cfg,i){
-    if(!cfg.options.length){
-      return '<div class="cfg-pick"><div class="row"><label>'+esc(cfg.name||'（未命名配置）')+'</label>'+
-        '<span class="hint">暂无选项（可在「编辑管理」中补充）</span></div></div>';
+  ],
+  "semi": [
+    {
+      "name": "相机组件",
+      "series": "",
+      "type": "semi",
+      "categories": [
+        {
+          "series": "",
+          "category": "CM",
+          "code3": "CM",
+          "remark": "",
+          "rule": "CM+2位流水码+6位配置码",
+          "digits": "10",
+          "picks": [
+            "G3-26C",
+            "24mm",
+            "ND8",
+            "X"
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "name": "相机",
+          "options": [
+            [
+              "G3-26C",
+              "1"
+            ],
+            [
+              "G3-61C",
+              "2"
+            ],
+            [
+              "G6-26B",
+              "3"
+            ],
+            [
+              "G6-26C",
+              "4"
+            ],
+            [
+              "G6-62B",
+              "5"
+            ],
+            [
+              "G6-62C",
+              "6"
+            ]
+          ]
+        },
+        {
+          "name": "镜头",
+          "options": [
+            [
+              "24mm",
+              "1"
+            ],
+            [
+              "28mm",
+              "2"
+            ],
+            [
+              "35mm",
+              "3"
+            ]
+          ]
+        },
+        {
+          "name": "ND镜",
+          "options": [
+            [
+              "ND8",
+              "1"
+            ],
+            [
+              "ND64",
+              "2"
+            ],
+            [
+              "ND1000",
+              "3"
+            ]
+          ]
+        },
+        {
+          "name": "伺服轴",
+          "options": [
+            [
+              "X",
+              "1"
+            ],
+            [
+              "X+Y",
+              "2"
+            ],
+            [
+              "X+Y+Z",
+              "3"
+            ],
+            [
+              "Z",
+              "4"
+            ],
+            [
+              "U",
+              "5"
+            ],
+            [
+              "X+U",
+              "6"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "收光组件",
+      "series": "",
+      "type": "semi",
+      "categories": [
+        {
+          "series": "",
+          "category": "PE",
+          "code3": "PE",
+          "remark": "",
+          "rule": "PE+2位流水码+6位配置码",
+          "digits": "10",
+          "picks": [
+            "1通道",
+            "G-1-01/A/A/01",
+            "",
+            "V1.0",
+            "1246通道5口"
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "name": "收光器通道",
+          "options": [
+            [
+              "1通道",
+              "1"
+            ],
+            [
+              "2通道",
+              "2"
+            ],
+            [
+              "4通道",
+              "4"
+            ],
+            [
+              "6通道",
+              "6"
+            ],
+            [
+              "8通道",
+              "8"
+            ]
+          ]
+        },
+        {
+          "name": "光谱仪",
+          "options": [
+            [
+              "G-1-01/A/A/01",
+              "1"
+            ],
+            [
+              "G-2-01/A/A/01",
+              "2"
+            ],
+            [
+              "G-2-02/A/A/01",
+              "3"
+            ],
+            [
+              "G-3-01/A/A/01",
+              "4"
+            ],
+            [
+              "G-4-01/A/A/01",
+              "5"
+            ],
+            [
+              "G-06",
+              "6"
+            ]
+          ]
+        },
+        {
+          "name": "排列方式",
+          "options": [
+            [
+              "",
+              "0"
+            ],
+            [
+              "水平",
+              "1"
+            ],
+            [
+              "垂直",
+              "2"
+            ],
+            [
+              "2X2",
+              "3"
+            ],
+            [
+              "2X4",
+              "4"
+            ]
+          ]
+        },
+        {
+          "name": "收光器版本",
+          "options": [
+            [
+              "V1.0",
+              "1"
+            ],
+            [
+              "V1.0slim",
+              "2"
+            ],
+            [
+              "V2.0",
+              "3"
+            ],
+            [
+              "V3.0",
+              "4"
+            ],
+            [
+              "双灯珠",
+              "5"
+            ]
+          ]
+        },
+        {
+          "name": "交换机（随收光器通道变更）",
+          "options": [
+            [
+              "1246通道5口",
+              ""
+            ],
+            [
+              "8通道九口",
+              ""
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "顶层组件",
+      "series": "",
+      "type": "semi",
+      "categories": [
+        {
+          "series": "",
+          "category": "TS",
+          "code3": "TS",
+          "remark": "",
+          "rule": "TS+8位流水码",
+          "digits": "10",
+          "picks": [
+            ""
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "name": "尺寸",
+          "options": []
+        }
+      ]
+    },
+    {
+      "name": "上壳体组件",
+      "series": "",
+      "type": "semi",
+      "categories": [
+        {
+          "series": "",
+          "category": "US",
+          "code3": "US",
+          "remark": "",
+          "rule": "US+8位流水码",
+          "digits": "10",
+          "picks": [
+            ""
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "name": "尺寸",
+          "options": []
+        }
+      ]
+    },
+    {
+      "name": "升降门组件",
+      "series": "",
+      "type": "semi",
+      "categories": [
+        {
+          "series": "",
+          "category": "RD",
+          "code3": "RD",
+          "remark": "",
+          "rule": "RD+8位流水码",
+          "digits": "10",
+          "picks": [
+            ""
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "name": "尺寸",
+          "options": []
+        }
+      ]
+    },
+    {
+      "name": "电脑组件",
+      "series": "",
+      "type": "semi",
+      "categories": [
+        {
+          "series": "",
+          "category": "CP",
+          "code3": "CP",
+          "remark": "",
+          "rule": "CP+2位流水码+6位配置码",
+          "digits": "10",
+          "picks": [
+            "",
+            ""
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "name": "工控机",
+          "options": []
+        },
+        {
+          "name": "显示器",
+          "options": []
+        }
+      ]
+    },
+    {
+      "name": "台面板组件",
+      "series": "",
+      "type": "semi",
+      "categories": [
+        {
+          "series": "",
+          "category": "PN",
+          "code3": "PN",
+          "remark": "",
+          "rule": "PN+2位流水码+6位配置码",
+          "digits": "10",
+          "picks": [
+            "",
+            "有",
+            "有"
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "name": "尺寸",
+          "options": []
+        },
+        {
+          "name": "电插头",
+          "options": [
+            [
+              "有",
+              "1"
+            ],
+            [
+              "重载",
+              "2"
+            ],
+            [
+              "圆插头",
+              "3"
+            ]
+          ]
+        },
+        {
+          "name": "气插头",
+          "options": [
+            [
+              "有",
+              "1"
+            ],
+            [
+              "重载",
+              "2"
+            ],
+            [
+              "圆插头",
+              "3"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "工装升降组件",
+      "series": "",
+      "type": "semi",
+      "categories": [
+        {
+          "series": "",
+          "category": "FL",
+          "code3": "FL",
+          "remark": "",
+          "rule": "FL+8位流水码",
+          "digits": "10",
+          "picks": [
+            ""
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "name": "尺寸",
+          "options": []
+        }
+      ]
+    },
+    {
+      "name": "输送组件",
+      "series": "",
+      "type": "semi",
+      "categories": [
+        {
+          "series": "",
+          "category": "CV",
+          "code3": "CV",
+          "remark": "",
+          "rule": "CV+8位流水码",
+          "digits": "10",
+          "picks": [
+            "",
+            ""
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "name": "尺寸",
+          "options": []
+        },
+        {
+          "name": "3",
+          "options": []
+        }
+      ]
+    },
+    {
+      "name": "下壳体组件",
+      "series": "",
+      "type": "semi",
+      "categories": [
+        {
+          "series": "",
+          "category": "LS",
+          "code3": "LS",
+          "remark": "",
+          "rule": "LS+8位流水码",
+          "digits": "10",
+          "picks": [
+            ""
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "name": "尺寸",
+          "options": []
+        }
+      ]
+    },
+    {
+      "name": "设备电气组件",
+      "series": "",
+      "type": "semi",
+      "categories": [
+        {
+          "series": "",
+          "category": "EC",
+          "code3": "EC",
+          "remark": "",
+          "rule": "EC+2位流水码+6位配置码",
+          "digits": "10",
+          "picks": [
+            "A"
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "name": "功能",
+          "options": [
+            [
+              "A",
+              "1"
+            ],
+            [
+              "B",
+              "2"
+            ],
+            [
+              "C",
+              "3"
+            ],
+            [
+              "D",
+              "4"
+            ],
+            [
+              "烧录",
+              "5"
+            ],
+            [
+              "校准",
+              "6"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "仪器仪表组件",
+      "series": "",
+      "type": "semi",
+      "categories": [
+        {
+          "series": "",
+          "category": "IN",
+          "code3": "IN",
+          "remark": "",
+          "rule": "IN+2位流水码+6位配置码",
+          "digits": "10",
+          "picks": [
+            "无",
+            "无",
+            "",
+            ""
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "name": "打印机",
+          "options": [
+            [
+              "无",
+              ""
+            ],
+            [
+              "有",
+              ""
+            ]
+          ]
+        },
+        {
+          "name": "扫码枪",
+          "options": [
+            [
+              "无",
+              ""
+            ],
+            [
+              "有",
+              ""
+            ]
+          ]
+        },
+        {
+          "name": "LIN",
+          "options": []
+        },
+        {
+          "name": "电流电压采集卡",
+          "options": []
+        }
+      ]
+    },
+    {
+      "name": "设备电气配件",
+      "series": "",
+      "type": "semi",
+      "categories": [
+        {
+          "series": "",
+          "category": "EA",
+          "code3": "EA",
+          "remark": "",
+          "rule": "EA+2位流水码+6位配置码",
+          "digits": "10",
+          "picks": [
+            ""
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "name": "功能",
+          "options": []
+        }
+      ]
+    },
+    {
+      "name": "软件组件",
+      "series": "",
+      "type": "semi",
+      "categories": [
+        {
+          "series": "",
+          "category": "SW",
+          "code3": "SW",
+          "remark": "",
+          "rule": "SW+2位流水码+6位配置码",
+          "digits": "10",
+          "picks": [
+            "总成"
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "name": "版本号",
+          "options": [
+            [
+              "总成",
+              "1"
+            ],
+            [
+              "PCBA",
+              "2"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "包装组件",
+      "series": "",
+      "type": "semi",
+      "categories": [
+        {
+          "series": "",
+          "category": "PK",
+          "code3": "PK",
+          "remark": "",
+          "rule": "PK+2位流水码+6位配置码",
+          "digits": "10",
+          "picks": [
+            "木托",
+            "有"
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "name": "",
+          "options": [
+            [
+              "木托",
+              "1"
+            ],
+            [
+              "木架",
+              "2"
+            ],
+            [
+              "木箱",
+              "3"
+            ],
+            [
+              "海外木箱",
+              "4"
+            ]
+          ]
+        },
+        {
+          "name": "CE认证",
+          "options": [
+            [
+              "有",
+              "C"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "设备大壳体",
+      "series": "",
+      "type": "semi",
+      "categories": [
+        {
+          "series": "",
+          "category": "SH",
+          "code3": "SH",
+          "remark": "",
+          "rule": "SH+5位流水码+3位配置码",
+          "digits": "10",
+          "picks": [
+            "",
+            ""
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "name": "设备分类",
+          "options": []
+        },
+        {
+          "name": "尺寸",
+          "options": []
+        }
+      ]
+    },
+    {
+      "name": "工装底板组件",
+      "series": "",
+      "type": "semi",
+      "categories": [
+        {
+          "series": "",
+          "category": "FP",
+          "code3": "FP",
+          "remark": "",
+          "rule": "FP+8位流水码",
+          "digits": "10",
+          "picks": [
+            ""
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "name": "尺寸",
+          "options": []
+        }
+      ]
+    },
+    {
+      "name": "设备内部组件",
+      "series": "",
+      "type": "semi",
+      "categories": [
+        {
+          "series": "",
+          "category": "IA",
+          "code3": "IA",
+          "remark": "",
+          "rule": "IA+5位流水码+3位配置码",
+          "digits": "10",
+          "picks": [
+            "分类代码"
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "name": "设备分类",
+          "options": [
+            [
+              "分类代码",
+              ""
+            ]
+          ]
+        }
+      ]
     }
-    let sel=0;
-    if(c.picks[i]!==undefined&&c.picks[i]!==''){
-      const fi=cfg.options.findIndex(function(o){return o[0]===c.picks[i]});
-      if(fi>=0)sel=fi;
-    }
-    const opts=cfg.options.map(function(o,j){
-      const v=o[0],code=o[1];
-      return '<option value="'+j+'"'+(j===sel?' selected':'')+'>'+
-        (v?esc(v):'（空值）')+' → 码 '+(code?esc(code):'（无）')+'</option>';
-    }).join('');
-    const hint='默认：'+(c.picks[i]?esc(c.picks[i]):'（自动取第 1 项）');
-    return '<div class="cfg-pick"><div class="row"><label>'+esc(cfg.name||'（未命名配置）')+'</label>'+
-      '<select data-cfg="'+i+'">'+opts+'</select></div>'+
-      '<div class="hint">'+hint+'</div></div>';
-  }).join('');
-  updatePreview();
+  ]
 }
-function updatePreview(){
-  const g=groupsOf(composeType)[composeGi];
-  const c=g&&(g.categories[composeCi]||g.categories[0]);
-  if(!g||!c){
-    $id('c-code').textContent='—';$id('c-segs').innerHTML='';$id('c-check').innerHTML='';return;
-  }
-  const spec=ruleSpec(c,g);
-  const flow=($id('c-flow').value||'').trim();
-  const codes=[];const segs=[];
-  document.querySelectorAll('#c-configs select[data-cfg]').forEach(function(sel){
-    const idx=parseInt(sel.getAttribute('data-cfg'),10);
-    const cfg=g.configs[idx];
-    const oi=parseInt(sel.value,10);
-    const o=cfg.options[oi];
-    const code=o?o[1]:'';
-    codes[idx]=code;
-    segs.push({name:cfg.name,code:code,missing:!o||o[1]===''});
-  });
-  const base=c.code3||'';
-  const full=base+flow+codes.join('');
-  $id('c-code').textContent=full||'—— 请选择并输入 ——';
-  const flowLabel=!isNaN(spec.flowN)?spec.flowN+'位流水码':'流水码';
-  let segHtml='<span class="seg"><span class="sl">分类代码</span><span class="sv">'+esc(base||'—')+'</span></span>'+
-    '<span class="seg'+(flow.length!==2?' missing':'')+'"><span class="sl">'+flowLabel+'</span><span class="sv">'+esc(flow||'—')+'</span></span>';
-  segHtml+=segs.map(function(s){
-    return '<span class="seg'+(s.missing?' missing':'')+'"><span class="sl">'+esc(s.name||'配置')+'</span><span class="sv">'+esc(s.code||'—')+'</span></span>';
-  }).join('');
-  $id('c-segs').innerHTML=segHtml;
-  const cfgLen=codes.join('').length;
-  const chks=[];
-  if(!base)chks.push({cls:'bad',txt:'分类代码为空，无法生成完整编码（请先在编辑管理中补充）'});
-  if(!flow)chks.push({cls:'warn',txt:'请输入 2 位流水码'});
-  else if(!isNaN(spec.flowN)&&flow.length!==spec.flowN)chks.push({cls:'warn',txt:'流水码应为 '+spec.flowN+' 位，当前 '+flow.length+' 位'});
-  if(!isNaN(spec.cfgN)&&cfgLen!==spec.cfgN)chks.push({cls:'warn',txt:'配置码应为 '+spec.cfgN+' 位，当前 '+cfgLen+' 位'});
-  if(spec.expected!==null&&base&&full.length!==spec.expected)chks.push({cls:'warn',txt:'编码总长应为 '+spec.expected+' 位，当前 '+full.length+' 位'});
-  if(!chks.length)chks.push({cls:'ok',txt:'编码符合规则长度要求'});
-  $id('c-check').innerHTML=chks.map(function(k){
-    return '<span class="chk '+k.cls+'">'+(k.cls==='ok'?'✓':'!')+' '+esc(k.txt)+'</span>';
-  }).join(' ');
-}
-/* ---------- 编辑管理 ---------- */
-function renderEdit(){
-  const arr=groupsOf(editType);
-  if(editGi>=arr.length)editGi=Math.max(0,arr.length-1);
-  $id('e-list').innerHTML=arr.map(function(g,i){
-    return '<li class="'+(i===editGi?'active':'')+'" data-act="edit-select" data-i="'+i+'">'+
-      '<div style="min-width:0;flex:1"><div class="ln">'+esc(g.name||'（未命名）')+(g.series?'（'+esc(g.series)+'）':'')+'</div>'+
-      '<div class="lm">'+(editType==='semi'?esc((g.categories[0]||{}).code3||''):g.categories.length+' 分类')+' · '+g.configs.length+' 配置</div></div>'+
-      '<span class="del" data-act="del-product" data-i="'+i+'"><svg viewBox="0 0 24 24" width="11" height="11" aria-hidden="true" style="display:block"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.6" fill="none" stroke-linecap="round"/></svg></span></li>';
-  }).join('');
-  if(!arr.length){$id('e-form').innerHTML='<div class="empty-tip">暂无数据，点击上方「新增成品 / 新增半成品」按钮创建。</div>';return}
-  renderEditForm(arr[editGi]);
-}
-function emptyCat(g){
-  return {series:g.series,category:'',code3:'',remark:'',rule:(g.categories[0]||{}).rule||'',digits:'',picks:g.configs.map(function(){return ''})};
-}
-function renderEditForm(g){
-  const isFin=editType==='finished';
-  let catsHTML;
-  if(isFin){
-    catsHTML='<div class="ef-wrap"><table class="ef"><colgroup><col style="width:24%"><col style="width:12%"><col style="width:16%"><col style="width:38%"><col style="width:10%"></colgroup><thead><tr><th>分类名称</th><th>分类代码</th><th>备注</th><th>编码规则</th><th></th></tr></thead><tbody>'+
-      g.categories.map(function(c,i){
-        return '<tr>'+
-          '<td><input data-field="cat-category" data-i="'+i+'" value="'+esc(c.category)+'" placeholder="如 GSA1000-A"></td>'+
-          '<td><input data-field="cat-code3" data-i="'+i+'" value="'+esc(c.code3)+'" placeholder="如 A1A" style="font-family:var(--mono)"></td>'+
-          '<td><input data-field="cat-remark" data-i="'+i+'" value="'+esc(c.remark)+'" placeholder="如 收光器"></td>'+
-          '<td><input data-field="cat-rule" data-i="'+i+'" value="'+esc(c.rule)+'" placeholder="如 A1A+2位流水码+7位配置码" style="font-family:var(--mono)"></td>'+
-          '<td><span class="icon-btn danger" data-act="del-cat" data-i="'+i+'">删</span></td></tr>';
-      }).join('')+'</tbody></table></div>'+
-      '<div class="add-row" style="margin-top:8px"><button class="icon-btn" data-act="add-cat">+ 添加分类</button></div>';
-  }else{
-    const c=g.categories[0]||{};
-    catsHTML='<div class="f-row"><label>半成品代号</label><input data-field="cat-code3" data-i="0" value="'+esc(c.code3)+'" placeholder="如 CM" style="font-family:var(--mono)"></div>'+
-      '<div class="f-row"><label>编码规则</label><input data-field="cat-rule" data-i="0" value="'+esc(c.rule)+'" placeholder="如 CM+2位流水码+6位配置码" style="font-family:var(--mono)"></div>'+
-      '<div class="f-row"><label>位数</label><input data-field="cat-digits" data-i="0" value="'+esc(c.digits)+'" placeholder="如 10"></div>';
-  }
-  const cfgsHTML=g.configs.map(function(cfg,ki){
-    return '<div class="cfg-edit">'+
-      '<div class="ce-head"><input data-field="cfg-name" data-ki="'+ki+'" value="'+esc(cfg.name)+'" placeholder="配置名，如 积分球外径">'+
-      '<span class="icon-btn danger" data-act="del-cfg" data-ki="'+ki+'">删除配置</span></div>'+
-      cfg.options.map(function(o,oi){
-        return '<div class="opt-row"><input class="ov" data-field="opt-v" data-ki="'+ki+'" data-oi="'+oi+'" value="'+esc(o[0])+'" placeholder="选项值，如 外径100">'+
-          '<input class="oc" data-field="opt-c" data-ki="'+ki+'" data-oi="'+oi+'" value="'+esc(o[1])+'" placeholder="码">'+
-          '<span class="x" data-act="del-opt" data-ki="'+ki+'" data-oi="'+oi+'">删</span></div>';
-      }).join('')+
-      '<div class="add-row"><button class="icon-btn" data-act="add-opt" data-ki="'+ki+'">+ 添加选项</button></div></div>';
-  }).join('');
-  $id('e-form').innerHTML=
-    '<h3 style="font-size:16px;margin-bottom:12px">编辑：'+esc(g.name||'（未命名）')+'</h3>'+
-    '<div class="form-grid">'+
-    '<div class="f-row"><label>产品名称</label><input data-field="name" value="'+esc(g.name)+'" placeholder="产品名称"></div>'+
-    (isFin?'<div class="f-row"><label>系列代码</label><input data-field="series" value="'+esc(g.series)+'" placeholder="如 A1"></div>':'')+
-    '<div><div class="h-sec"><span>分类</span></div>'+catsHTML+'</div>'+
-    '<div><div class="h-sec"><span>配置结构（'+g.configs.length+' 项）</span><span class="muted" style="font-size:11px;font-weight:400">配置顺序即编码中配置码的顺序</span></div>'+cfgsHTML+
-    '<div class="add-row" style="margin-top:8px"><button class="icon-btn" data-act="add-cfg">+ 添加配置</button></div></div>'+
-    '<div class="e-actions"><button class="btn primary" data-act="save-now">保存更改</button>'+
-    '<button class="btn" data-act="discard">放弃更改</button>'+
-    '<button class="btn danger" data-act="del-product-selected">删除此产品</button>'+
-    '<span class="e-dirty" id="e-dirty"></span></div></div>';
-}
-/* ---------- 数据修改 ---------- */
-function updateGroupField(t,i,f,v){const g=groupsOf(t)[i];if(g)g[f]=v;markDirty()}
-function updateCatField(t,i,ci,f,v){const g=groupsOf(t)[i];if(g&&g.categories[ci])g.categories[ci][f]=v;markDirty()}
-function updateCfgField(t,i,ki,f,v){const g=groupsOf(t)[i];if(g&&g.configs[ki])g.configs[ki][f]=v;markDirty()}
-function updateOptField(t,i,ki,oi,slot,v){
-  const g=groupsOf(t)[i];
-  if(g&&g.configs[ki]&&g.configs[ki].options[oi])g.configs[ki].options[oi][slot]=v;
-  markDirty();
-}
-function reForm(){renderEditForm(groupsOf(editType)[editGi])}
-function addCat(t,i){const g=groupsOf(t)[i];if(!g)return;g.categories.push(emptyCat(g));reForm();persistNow()}
-function delCat(t,i,ci){const g=groupsOf(t)[i];if(!g)return;g.categories.splice(ci,1);reForm();persistNow()}
-function addCfg(t,i){const g=groupsOf(t)[i];if(!g)return;g.configs.push({name:'',options:[]});g.categories.forEach(function(c){c.picks.push('')});reForm();persistNow()}
-function delCfg(t,i,ki){const g=groupsOf(t)[i];if(!g)return;g.configs.splice(ki,1);g.categories.forEach(function(c){c.picks.splice(ki,1)});reForm();persistNow()}
-function addOpt(t,i,ki){const g=groupsOf(t)[i];if(!g||!g.configs[ki])return;g.configs[ki].options.push(['','']);reForm();persistNow()}
-function delOpt(t,i,ki,oi){const g=groupsOf(t)[i];if(!g||!g.configs[ki])return;g.configs[ki].options.splice(oi,1);reForm();persistNow()}
-function addProduct(t){
-  const arr=groupsOf(t);
-  if(t==='semi'){
-    arr.push({name:'新半成品',series:'',type:'semi',
-      categories:[{series:'',category:'',code3:'新',remark:'',rule:'XX+2位流水码+6位配置码',digits:'10',picks:[]}],configs:[]});
-  }else{
-    arr.push({name:'新成品',series:'?',type:'finished',
-      categories:[{series:'',category:'',code3:'',remark:'',rule:'+2位流水码+7位配置码',digits:'',picks:[]}],configs:[]});
-  }
-  editType=t;editGi=arr.length-1;persistNow();renderEdit();
-  const nf=document.querySelector('#e-form input[data-field="name"]');
-  if(nf){nf.focus();nf.select()}
-}
-function discardEdit(){
-  let raw=null;
-  if(storageOk){try{raw=localStorage.getItem(LS_KEY)}catch(e){raw=null}}
-  if(raw){
-    try{data=normalize(JSON.parse(raw));dirty=false;renderEdit();toast('已放弃修改，恢复上次保存内容','')}
-    catch(e){toast('本地数据无法解析','bad')}
-  }else{
-    data=normalize(deepCopy(RAW_DATA));save();dirty=false;renderEdit();toast('已恢复初始规则','');
-  }
-}
-/* ---------- 导入导出 / 复制 ---------- */
-function exportData(){
-  const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
-  const url=URL.createObjectURL(blob);
-  const a=document.createElement('a');
-  const d=new Date(),pad=function(n){return String(n).padStart(2,'0')};
-  a.href=url;a.download='成品半成品编码规则_备份_'+d.getFullYear()+pad(d.getMonth()+1)+pad(d.getDate())+'.json';
-  document.body.appendChild(a);a.click();a.remove();
-  setTimeout(function(){URL.revokeObjectURL(url)},1000);
-  toast('已导出 JSON 备份','');
-}
-function importFile(file){
-  const reader=new FileReader();
-  reader.onload=function(){
-    try{
-      const nd=normalize(JSON.parse(reader.result));
-      data=nd;save();dirty=false;
-      switchView(view);renderCompose();
-      toast('导入成功，共 '+data.finished.length+' 成品组 / '+data.semi.length+' 半成品','');
-    }catch(err){toast('导入失败：文件格式不正确','bad')}
-  };
-  reader.readAsText(file,'utf-8');
-}
-function copyCode(){
-  const code=$id('c-code').textContent;
-  if(!code||code.charAt(0)==='—'){toast('当前无可复制的完整编码','warn');return}
-  const done=function(){toast('已复制编码：'+code,'')};
-  if(navigator.clipboard&&navigator.clipboard.writeText){
-    navigator.clipboard.writeText(code).then(done,function(){fallbackCopy(code,done)});
-  }else fallbackCopy(code,done);
-}
-function fallbackCopy(text,cb){
-  const ta=document.createElement('textarea');
-  ta.value=text;ta.style.position='fixed';ta.style.opacity='0';
-  document.body.appendChild(ta);ta.select();
-  try{document.execCommand('copy')}catch(e){}
-  ta.remove();cb();
-}
-/* ---------- 事件委托 ---------- */
-let searchTimer=null;
-document.addEventListener('click',function(e){
-  const vt=e.target.closest('[data-view-tab]');
-  if(vt){switchView(vt.getAttribute('data-view-tab'));return}
-  const tb=e.target.closest('[data-tb]');
-  if(tb){
-    browseType=tb.getAttribute('data-tb');
-    document.querySelectorAll('#type-seg-b button').forEach(function(b){b.classList.toggle('active',b===tb)});
-    renderBrowse();return;
-  }
-  const tc=e.target.closest('[data-tc]');
-  if(tc){
-    composeType=tc.getAttribute('data-tc');composeGi=0;composeCi=0;
-    document.querySelectorAll('#type-seg-c button').forEach(function(b){b.classList.toggle('active',b===tc)});
-    renderCompose();return;
-  }
-  const te=e.target.closest('[data-te]');
-  if(te){
-    editType=te.getAttribute('data-te');editGi=0;
-    document.querySelectorAll('#type-seg-e button').forEach(function(b){b.classList.toggle('active',b===te)});
-    renderEdit();return;
-  }
-  const el=e.target.closest('[data-act]');
-  if(!el)return;
-  const act=el.getAttribute('data-act');
-  const t=el.getAttribute('data-t')||editType;
-  const g=parseInt(el.getAttribute('data-g')||0,10);
-  const c=parseInt(el.getAttribute('data-c')||0,10);
-  const i=parseInt(el.getAttribute('data-i')||0,10);
-  const ki=parseInt(el.getAttribute('data-ki')||0,10);
-  const oi=parseInt(el.getAttribute('data-oi')||0,10);
-  switch(act){
-    case 'export':exportData();break;
-    case 'import':$id('import-file').click();break;
-    case 'reset':
-      if(confirm('确定恢复为初始导入的规则？当前所有修改将被覆盖。')){data=normalize(deepCopy(RAW_DATA));save();dirty=false;switchView(view);renderCompose();toast('已恢复初始规则','')}
-      break;
-    case 'compose-go':composeType=t;composeGi=g;composeCi=c;switchView('compose');break;
-    case 'copy-code':copyCode();break;
-    case 'clear-flow':$id('c-flow').value='';updatePreview();break;
-    case 'edit-select':editGi=i;renderEdit();break;
-    case 'del-product':
-      if(confirm('删除该规则组？')){groupsOf(editType).splice(i,1);if(editGi>=groupsOf(editType).length)editGi=Math.max(0,groupsOf(editType).length-1);persistNow();renderEdit();}
-      break;
-    case 'add-product':addProduct(el.getAttribute('data-e-type'));break;
-    case 'add-cat':addCat(editType,editGi);break;
-    case 'del-cat':delCat(editType,editGi,i);break;
-    case 'add-cfg':addCfg(editType,editGi);break;
-    case 'del-cfg':if(confirm('删除该配置及其所有选项？'))delCfg(editType,editGi,ki);break;
-    case 'add-opt':addOpt(editType,editGi,ki);break;
-    case 'del-opt':delOpt(editType,editGi,ki,oi);break;
-    case 'save-now':persistNow();toast('已保存','');break;
-    case 'discard':discardEdit();break;
-    case 'del-product-selected':
-      if(confirm('删除当前产品？')){groupsOf(editType).splice(editGi,1);if(editGi>=groupsOf(editType).length)editGi=Math.max(0,groupsOf(editType).length-1);persistNow();renderEdit();}
-      break;
-  }
-});
-document.addEventListener('input',function(e){
-  const el=e.target;
-  if(el.id==='q'){
-    clearTimeout(searchTimer);
-    searchTimer=setTimeout(renderBrowse,180);
-    return;
-  }
-  if(el.id==='c-flow'){updatePreview();return}
-  if(el.hasAttribute('data-field')){
-    const f=el.getAttribute('data-field');
-    const val=el.value;
-    if(f==='name'||f==='series')updateGroupField(editType,editGi,f,val);
-    else if(f==='cat-category')updateCatField(editType,editGi,parseInt(el.getAttribute('data-i'),10),'category',val);
-    else if(f==='cat-code3')updateCatField(editType,editGi,parseInt(el.getAttribute('data-i'),10),'code3',val);
-    else if(f==='cat-remark')updateCatField(editType,editGi,parseInt(el.getAttribute('data-i'),10),'remark',val);
-    else if(f==='cat-rule')updateCatField(editType,editGi,parseInt(el.getAttribute('data-i'),10),'rule',val);
-    else if(f==='cat-digits')updateCatField(editType,editGi,parseInt(el.getAttribute('data-i'),10),'digits',val);
-    else if(f==='cfg-name')updateCfgField(editType,editGi,parseInt(el.getAttribute('data-ki'),10),'name',val);
-    else if(f==='opt-v')updateOptField(editType,editGi,parseInt(el.getAttribute('data-ki'),10),parseInt(el.getAttribute('data-oi'),10),0,val);
-    else if(f==='opt-c')updateOptField(editType,editGi,parseInt(el.getAttribute('data-ki'),10),parseInt(el.getAttribute('data-oi'),10),1,val);
-    return;
-  }
-});
-document.addEventListener('change',function(e){
-  const el=e.target;
-  if(el.id==='c-product'){composeGi=parseInt(el.value,10);renderComposeCat();}
-  else if(el.id==='c-category'){composeCi=parseInt(el.value,10);updateComposeBody();}
-  else if(el.hasAttribute('data-cfg')){updatePreview();}
-  else if(el.id==='series-filter'){seriesFilter=el.value;renderBrowse();}
-});
-$id('import-file').addEventListener('change',function(){
-  const f=this.files[0];
-  if(f)importFile(f);
-  this.value='';
-});
 /* ---------- 初始化 ---------- */
 load();
 renderStats();
